@@ -298,9 +298,8 @@
 		DB22099526870C30009F8236 /* ReposList */ = {
 			isa = PBXGroup;
 			children = (
-				DB22099626870C43009F8236 /* ReposListVC.swift */,
-				DB2209EA26871C1C009F8236 /* ReposListView.swift */,
-				DB2209E826871BC8009F8236 /* ReposListCoordinator.swift */,
+				DB220A0D268767BF009F8236 /* Screen */,
+				DB220A0E268767C3009F8236 /* Helpers */,
 			);
 			path = ReposList;
 			sourceTree = "<group>";
@@ -536,6 +535,23 @@
 				DB220A0B26875F0C009F8236 /* GetReposService.swift */,
 			);
 			path = Repos;
+			sourceTree = "<group>";
+		};
+		DB220A0D268767BF009F8236 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				DB22099626870C43009F8236 /* ReposListVC.swift */,
+				DB2209EA26871C1C009F8236 /* ReposListView.swift */,
+				DB2209E826871BC8009F8236 /* ReposListCoordinator.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		DB220A0E268767C3009F8236 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		DBA7352B2686F62F00630516 = {
