@@ -19,8 +19,17 @@ class WebAPIWorkersFactory {
   
   init(session: URLSession) {
     self.session = session
-    baseURL = "https://us-central1-cvapp-8ebd9.cloudfunctions.net"
+    baseURL = "https://api.bitbucket.org/2.0"
     requestComposer = URLRequestComposer(baseURL: baseURL)
+  }
+  
+  // MARK: - Repos
+  
+  func createGetReposWebAPIWorker() -> GetReposWebAPIWorker {
+    return GetReposWebAPIWorker(
+      session: session,
+      requestComposer: requestComposer
+    )
   }
   
 }

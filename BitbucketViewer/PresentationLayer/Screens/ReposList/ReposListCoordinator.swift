@@ -35,7 +35,8 @@ class ReposListCoordinator {
     let view = ReposListView()
     let vc = ReposListVC(
       view: view,
-      currentAppearanceService: servicesFactory.createAppearanceService()
+      currentAppearanceService: servicesFactory.createAppearanceService(),
+      getReposService: servicesFactory.createGetReposService()
     )
     return vc
   }

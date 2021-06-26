@@ -33,4 +33,16 @@ class URLRequestComposer {
     }
     return request
   }
+  
+  func createURLEncodedRequest(
+    endpoint: String,
+    customHeaders: [String: String],
+    params: [String: String]
+  ) -> URLRequest {
+    var components = URLComponents(string: baseURL + "/" + endpoint)!
+    components.queryItems = params.map { (key, value) in
+      URLQueryItem(name: key, value: value)
+    }
+    return URLRequest(url: components.url!)
+  }
 }

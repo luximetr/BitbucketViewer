@@ -41,7 +41,10 @@ class GetReposWebAPIWorker: URLSessionWebAPIWorker {
   // MARK: - Create request
   
   private func createRequest() -> URLRequest {
-    return createURLRequest(endpoint: "repositories", httpMethod: "GET")
+    return createURLEncodedRequest(
+      endpoint: "repositories",
+      httpMethod: "GET"
+    )
   }
   
   // MARK: - Typealiases

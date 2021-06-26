@@ -76,4 +76,12 @@ class ServicesFactory {
   private func createProgressHUDAppearanceService() -> ProgressHUDAppearanceService {
     return ProgressHUDAppearanceService()
   }
+  
+  // MARK: - Repo
+  
+  func createGetReposService() -> GetReposService {
+    return GetReposService(
+      getReposWebAPIWorker: webAPIWorkersFactory.createGetReposWebAPIWorker()
+    )
+  }
 }

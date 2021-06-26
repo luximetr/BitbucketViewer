@@ -66,6 +66,7 @@
 		DB220A0426875D2D009F8236 /* WebAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A0326875D2D009F8236 /* WebAPIResult.swift */; };
 		DB220A0726875D41009F8236 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A0626875D41009F8236 /* ServiceResult.swift */; };
 		DB220A0926875D5D009F8236 /* ServiceResultConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A0826875D5D009F8236 /* ServiceResultConvertor.swift */; };
+		DB220A0C26875F0C009F8236 /* GetReposService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A0B26875F0C009F8236 /* GetReposService.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -139,6 +140,7 @@
 		DB220A0326875D2D009F8236 /* WebAPIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIResult.swift; sourceTree = "<group>"; };
 		DB220A0626875D41009F8236 /* ServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
 		DB220A0826875D5D009F8236 /* ServiceResultConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResultConvertor.swift; sourceTree = "<group>"; };
+		DB220A0B26875F0C009F8236 /* GetReposService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposService.swift; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 		DB2209C526870EB2009F8236 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				DB220A0A26875F00009F8236 /* Repos */,
 				DB2209DB268719EB009F8236 /* Start */,
 				DB2209D82687103A009F8236 /* Localization */,
 				DB2209D326870FD7009F8236 /* Languages */,
@@ -525,6 +528,14 @@
 				DB220A0826875D5D009F8236 /* ServiceResultConvertor.swift */,
 			);
 			path = ServiceResult;
+			sourceTree = "<group>";
+		};
+		DB220A0A26875F00009F8236 /* Repos */ = {
+			isa = PBXGroup;
+			children = (
+				DB220A0B26875F0C009F8236 /* GetReposService.swift */,
+			);
+			path = Repos;
 			sourceTree = "<group>";
 		};
 		DBA7352B2686F62F00630516 = {
@@ -851,6 +862,7 @@
 				DB22099926870C6F009F8236 /* InitViewController.swift in Sources */,
 				DB220A00268759C2009F8236 /* ISO8601DateConvertor.swift in Sources */,
 				DB2209B026870DC3009F8236 /* AppearanceConfigurable.swift in Sources */,
+				DB220A0C26875F0C009F8236 /* GetReposService.swift in Sources */,
 				DB2209AB26870D8D009F8236 /* AlertViewModel.swift in Sources */,
 				DB2209BE26870E3D009F8236 /* Theme.swift in Sources */,
 				DB2209FD26872496009F8236 /* RepoJSONParser.swift in Sources */,

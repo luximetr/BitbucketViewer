@@ -15,12 +15,16 @@ class ReposListVC: ScreenController {
   
   // MARK: - Dependencies
   
+  private let getReposService: GetReposService
+  
   // MARK: - Life cycle
   
   init(view: ReposListView,
-       currentAppearanceService: AppearanceService
+       currentAppearanceService: AppearanceService,
+       getReposService: GetReposService
   ) {
     selfView = view
+    self.getReposService = getReposService
     super.init(
       screenView: view,
       currentAppearanceService: currentAppearanceService
@@ -36,11 +40,27 @@ class ReposListVC: ScreenController {
   override func viewDidLoad() {
     super.viewDidLoad()
     setupView()
+    prepareReposListData()
   }
   
   // MARK: - View - Setup
   
   private func setupView() {
     selfView.backgroundColor = .blue
+  }
+  
+  // MARK: - Repos - Display
+  
+  private func prepareReposListData() {
+    loadReposList()
+  }
+  
+  private func loadReposList() {
+    getReposService.getRepos(completion: { result in
+      switch result {
+        case .success(let repos): print(repos)
+        case .failure(let error): print(error)
+      }
+    })
   }
 }
