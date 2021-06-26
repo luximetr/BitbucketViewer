@@ -70,6 +70,7 @@ class RepoItemView: InitView, AppearanceConfigurable {
   
   private func setupAvatarImageView() {
     avatarImageView.contentMode = .scaleAspectFit
+    avatarImageView.layer.masksToBounds = true
   }
   
   private func autoLayoutAvatarImageView() {

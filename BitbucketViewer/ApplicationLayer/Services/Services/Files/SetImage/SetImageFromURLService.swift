@@ -22,11 +22,17 @@ class ImageSetFromURLService {
       } else {
         imageView.sd_imageTransition = .fade
         imageView.sd_setImage(
-          with: imageURL, placeholderImage: placeholder, options: [.refreshCached])
+          with: imageURL,
+          placeholderImage: placeholder,
+          options: [.refreshCached]
+        )
       }
     } else {
       imageView.sd_setImage(
-        with: imageURL, placeholderImage: placeholder, options: [.refreshCached])
+        with: imageURL,
+        placeholderImage: placeholder,
+        options: [.refreshCached]
+      )
     }
   }
 }

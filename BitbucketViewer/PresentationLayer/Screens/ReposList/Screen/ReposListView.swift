@@ -63,6 +63,7 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
   // MARK: - Setup tableView
   
   private func setupTableView() {
+    tableView.allowsSelection = false
     tableView.separatorStyle = .none
   }
   
@@ -97,6 +98,7 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
       type: repo.type,
       createdOn: createCreatedOnString(from: repo.createdOn)
     )
+    cell.imageSetService = imageSetService
     cell.tapAction = {
       print("Did select \(String(describing: repo.displayName))")
     }

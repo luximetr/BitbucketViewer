@@ -23,7 +23,8 @@ class RepoUserJSONParser {
   
   private func parseAvatar(from json: JSON) -> URL? {
     guard let links = json["links"] as? JSON else { return nil }
-    guard let avatarURLString = links["avatar"] as? String else { return nil }
-    return URL(string: avatarURLString)
+    guard let avatarJSON = links["avatar"] as? JSON else { return nil }
+    guard let href = avatarJSON["href"] as? String else { return nil }
+    return URL(string: href)
   }
 }
