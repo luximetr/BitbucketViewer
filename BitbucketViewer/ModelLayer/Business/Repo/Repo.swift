@@ -11,8 +11,8 @@ typealias RepoIdType = String
 
 struct Repo {
   let id: RepoIdType
-  let displayName: String
-  let type: String
-  let createdOn: Date
+  let displayName: String?
+  let type: String?
+  let createdOn: Date?
   let owner: RepoUser
 }
