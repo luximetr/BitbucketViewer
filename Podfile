@@ -5,6 +5,7 @@ target 'BitbucketViewer' do
   use_frameworks!
 
   pod 'SnapKit'
+  pod 'DifferenceKit'
   pod 'SVProgressHUD'
   pod 'SDWebImage'
 

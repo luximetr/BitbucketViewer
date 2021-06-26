@@ -1,4 +1,10 @@
 PODS:
+  - DifferenceKit (1.2.0):
+    - DifferenceKit/Core (= 1.2.0)
+    - DifferenceKit/UIKitExtension (= 1.2.0)
+  - DifferenceKit/Core (1.2.0)
+  - DifferenceKit/UIKitExtension (1.2.0):
+    - DifferenceKit/Core
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
@@ -6,21 +12,24 @@ PODS:
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
+  - DifferenceKit
   - SDWebImage
   - SnapKit
   - SVProgressHUD
 
 SPEC REPOS:
   trunk:
+    - DifferenceKit
     - SDWebImage
     - SnapKit
     - SVProgressHUD
 
 SPEC CHECKSUMS:
+  DifferenceKit: 5659c430bb7fe45876fa32ce5cba5d6167f0c805
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 0fea4ea14ddb0dd810dd0d46eb17534bd16edc4f
+PODFILE CHECKSUM: 0cfafd9bb386be0c2c14c7a6ac096ba190552773
 
 COCOAPODS: 1.10.1
