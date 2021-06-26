@@ -36,6 +36,13 @@ class RepoItemView: InitView, AppearanceConfigurable {
   
   override func autoLayout() {
     super.autoLayout()
+    addSubviews([
+      avatarImageView,
+      displayNameLabel,
+      typeLabel,
+      createdOnLabel,
+      actionButton
+    ])
     autoLayoutAvatarImageView()
     autoLayoutDisplayNameLabel()
     autoLayoutTypeLabel()

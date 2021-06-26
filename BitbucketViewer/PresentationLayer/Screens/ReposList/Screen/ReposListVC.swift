@@ -56,10 +56,13 @@ class ReposListVC: ScreenController {
   }
   
   private func loadReposList() {
-    getReposService.getRepos(completion: { result in
-      switch result {
-        case .success(let repos): print(repos)
-        case .failure(let error): print(error)
+    getReposService.getRepos(completion: { [weak self] result in
+      DispatchQueue.main.async {
+        switch result {
+          case .success(let repos):
+            self?.selfView.displayReposList(repos)
+          case .failure(let error): print(error)
+        }
       }
     })
   }

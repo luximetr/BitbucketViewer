@@ -10,6 +10,10 @@ import SnapKit
 
 class InitView: UIView {
   
+  convenience init() {
+    self.init(frame: .zero)
+  }
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
     setup()

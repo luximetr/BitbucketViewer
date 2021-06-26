@@ -16,6 +16,7 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
   // MARK: - Dependencies
   
   private let imageSetService: ImageSetFromURLService
+  private var createdOnFormatter = DateFormatter()
   
   // MARK: - Controllers
   
@@ -25,13 +26,15 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
   
   init(imageSetService: ImageSetFromURLService) {
     self.imageSetService = imageSetService
-    super.init()
+    createdOnFormatter.dateFormat = "dd MMM yyyy"
+    super.init(frame: .zero)
   }
   
   // MARK: - List - Display
   
-  func displayList() {
-    
+  func displayReposList(_ repos: [Repo]) {
+    let cells = createReposCells(repos)
+    tableViewController.reloadItems(cells, animated: false)
   }
   
   // MARK: - Setup
@@ -79,5 +82,29 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
   
   private func setupTableViewController() {
     tableViewController.tableView = tableView
+  }
+  
+  // MARK: - Repos - Create cells
+  
+  private func createReposCells(_ repos: [Repo]) -> [TableCellConfigurator] {
+    return repos.compactMap { createRepoCell($0) }
+  }
+  
+  private func createRepoCell(_ repo: Repo) -> TableCellConfigurator {
+    let cell = RepoItemCellConfigurator(
+      avatarURL: repo.owner.avatar,
+      displayName: repo.displayName ?? "",
+      type: repo.type,
+      createdOn: createCreatedOnString(from: repo.createdOn)
+    )
+    cell.tapAction = {
+      print("Did select \(String(describing: repo.displayName))")
+    }
+    return cell
+  }
+  
+  private func createCreatedOnString(from date: Date?) -> String {
+    guard let date = date else { return "" }
+    return createdOnFormatter.string(from: date)
   }
 }
