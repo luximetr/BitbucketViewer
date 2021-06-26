@@ -11,7 +11,7 @@ class RepoUserJSONParser {
   
   // MARK: - JSON - RepoUser
   
-  func convertToRepoUser(from json: JSON) -> RepoUser? {
+  func parseRepoUser(from json: JSON) -> RepoUser? {
     guard let id = json["uuid"] as? RepoUserIdType else { return nil }
     let avatar = parseAvatar(from: json)
     
