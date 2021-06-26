@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RepoItemView: InitView {
+class RepoItemView: InitView, AppearanceConfigurable {
   
   // MARK: - UI elements
   

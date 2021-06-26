@@ -13,9 +13,20 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
   
   private let tableView = UITableView()
   
+  // MARK: - Dependencies
+  
+  private let imageSetService: ImageSetFromURLService
+  
   // MARK: - Controllers
   
   private let tableViewController = TableViewController()
+  
+  // MARK: - Life cycle
+  
+  init(imageSetService: ImageSetFromURLService) {
+    self.imageSetService = imageSetService
+    super.init()
+  }
   
   // MARK: - List - Display
   

@@ -32,7 +32,9 @@ class ReposListCoordinator {
   // MARK: - Screens creating
   
   private func createReposListScreen() -> UIViewController {
-    let view = ReposListView()
+    let view = ReposListView(
+      imageSetService: servicesFactory.createImageSetFromURLService()
+    )
     let vc = ReposListVC(
       view: view,
       currentAppearanceService: servicesFactory.createAppearanceService(),

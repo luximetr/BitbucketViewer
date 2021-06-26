@@ -77,6 +77,12 @@ class ServicesFactory {
     return ProgressHUDAppearanceService()
   }
   
+  // MARK: - Files
+  
+  func createImageSetFromURLService() -> ImageSetFromURLService {
+    return ImageSetFromURLService()
+  }
+  
   // MARK: - Repo
   
   func createGetReposService() -> GetReposService {
