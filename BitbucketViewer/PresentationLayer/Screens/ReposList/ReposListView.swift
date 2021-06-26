@@ -13,11 +13,22 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
   
   private let tableView = UITableView()
   
+  // MARK: - Controllers
+  
+  private let tableViewController = TableViewController()
+  
+  // MARK: - List - Display
+  
+  func displayList() {
+    
+  }
+  
   // MARK: - Setup
   
   override func setup() {
     super.setup()
     setupTableView()
+    setupTableViewController()
   }
   
   // MARK: - AutoLayout
@@ -51,5 +62,11 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
       make.leading.trailing.bottom.equalToSuperview()
       make.top.equalTo(navigationBarView.snp.bottom)
     }
+  }
+  
+  // MARK: - Setup tableViewController
+  
+  private func setupTableViewController() {
+    tableViewController.tableView = tableView
   }
 }
