@@ -1,0 +1,6 @@
+framework module Pods_BitbucketViewer {
+  umbrella header "Pods-BitbucketViewer-umbrella.h"
+
+  export *
+  module * { export * }
+}
