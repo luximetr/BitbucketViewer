@@ -7,6 +7,49 @@
 
 import UIKit
 
-class ReposListView: InitView, AppearanceConfigurable {
+class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
   
+  // MARK: - UI elements
+  
+  private let tableView = UITableView()
+  
+  // MARK: - Setup
+  
+  override func setup() {
+    super.setup()
+    setupTableView()
+  }
+  
+  // MARK: - AutoLayout
+  
+  override func autoLayout() {
+    super.autoLayout()
+    addSubview(tableView)
+    autoLayoutTableView()
+  }
+  
+  // MARK: - Appearance
+  
+  override func setAppearance(_ appearance: Appearance) {
+    super.setAppearance(appearance)
+    setTableViewAppearance(appearance: appearance)
+  }
+  
+  // MARK: - Setup tableView
+  
+  private func setupTableView() {
+    tableView.separatorStyle = .none
+  }
+  
+  private func setTableViewAppearance(appearance: Appearance) {
+    tableView.backgroundColor = appearance.background.primary
+    tableView.indicatorStyle = appearance.scrollIndicator.style
+  }
+  
+  private func autoLayoutTableView() {
+    tableView.snp.makeConstraints { make in
+      make.leading.trailing.bottom.equalToSuperview()
+      make.top.equalTo(navigationBarView.snp.bottom)
+    }
+  }
 }
