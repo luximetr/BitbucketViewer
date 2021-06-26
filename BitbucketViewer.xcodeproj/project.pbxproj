@@ -67,6 +67,7 @@
 		DB220A0726875D41009F8236 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A0626875D41009F8236 /* ServiceResult.swift */; };
 		DB220A0926875D5D009F8236 /* ServiceResultConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A0826875D5D009F8236 /* ServiceResultConvertor.swift */; };
 		DB220A0C26875F0C009F8236 /* GetReposService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A0B26875F0C009F8236 /* GetReposService.swift */; };
+		DB220A1126876834009F8236 /* RepoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A1026876834009F8236 /* RepoItemView.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -141,6 +142,7 @@
 		DB220A0626875D41009F8236 /* ServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
 		DB220A0826875D5D009F8236 /* ServiceResultConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResultConvertor.swift; sourceTree = "<group>"; };
 		DB220A0B26875F0C009F8236 /* GetReposService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposService.swift; sourceTree = "<group>"; };
+		DB220A1026876834009F8236 /* RepoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItemView.swift; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -550,8 +552,17 @@
 		DB220A0E268767C3009F8236 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DB220A0F26876828009F8236 /* RepoItem */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DB220A0F26876828009F8236 /* RepoItem */ = {
+			isa = PBXGroup;
+			children = (
+				DB220A1026876834009F8236 /* RepoItemView.swift */,
+			);
+			path = RepoItem;
 			sourceTree = "<group>";
 		};
 		DBA7352B2686F62F00630516 = {
@@ -874,6 +885,7 @@
 				DB220A0426875D2D009F8236 /* WebAPIResult.swift in Sources */,
 				DB2209BF26870E3D009F8236 /* ThemesFactory.swift in Sources */,
 				DB2209CE26870F17009F8236 /* CurrentThemeChangedNotifier.swift in Sources */,
+				DB220A1126876834009F8236 /* RepoItemView.swift in Sources */,
 				DB2209C026870E3D009F8236 /* Language.swift in Sources */,
 				DB22099926870C6F009F8236 /* InitViewController.swift in Sources */,
 				DB220A00268759C2009F8236 /* ISO8601DateConvertor.swift in Sources */,
