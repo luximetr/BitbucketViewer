@@ -62,6 +62,10 @@
 		DB2209FB268723A9009F8236 /* RepoUserJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209FA268723A9009F8236 /* RepoUserJSONParser.swift */; };
 		DB2209FD26872496009F8236 /* RepoJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209FC26872496009F8236 /* RepoJSONParser.swift */; };
 		DB220A00268759C2009F8236 /* ISO8601DateConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209FF268759C2009F8236 /* ISO8601DateConvertor.swift */; };
+		DB220A0226875CD5009F8236 /* GetReposWebAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A0126875CD5009F8236 /* GetReposWebAPIWorker.swift */; };
+		DB220A0426875D2D009F8236 /* WebAPIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A0326875D2D009F8236 /* WebAPIResult.swift */; };
+		DB220A0726875D41009F8236 /* ServiceResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A0626875D41009F8236 /* ServiceResult.swift */; };
+		DB220A0926875D5D009F8236 /* ServiceResultConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A0826875D5D009F8236 /* ServiceResultConvertor.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -131,6 +135,10 @@
 		DB2209FA268723A9009F8236 /* RepoUserJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUserJSONParser.swift; sourceTree = "<group>"; };
 		DB2209FC26872496009F8236 /* RepoJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoJSONParser.swift; sourceTree = "<group>"; };
 		DB2209FF268759C2009F8236 /* ISO8601DateConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ISO8601DateConvertor.swift; sourceTree = "<group>"; };
+		DB220A0126875CD5009F8236 /* GetReposWebAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposWebAPIWorker.swift; sourceTree = "<group>"; };
+		DB220A0326875D2D009F8236 /* WebAPIResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPIResult.swift; sourceTree = "<group>"; };
+		DB220A0626875D41009F8236 /* ServiceResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResult.swift; sourceTree = "<group>"; };
+		DB220A0826875D5D009F8236 /* ServiceResultConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResultConvertor.swift; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -188,6 +196,7 @@
 		DB22096D26870959009F8236 /* WebAPIWorkers */ = {
 			isa = PBXGroup;
 			children = (
+				DB220A0126875CD5009F8236 /* GetReposWebAPIWorker.swift */,
 			);
 			path = WebAPIWorkers;
 			sourceTree = "<group>";
@@ -205,6 +214,7 @@
 		DB22097326870A06009F8236 /* Results */ = {
 			isa = PBXGroup;
 			children = (
+				DB220A0526875D36009F8236 /* ServiceResult */,
 				DB22097426870A0C009F8236 /* WebAPIResult */,
 			);
 			path = Results;
@@ -213,6 +223,7 @@
 		DB22097426870A0C009F8236 /* WebAPIResult */ = {
 			isa = PBXGroup;
 			children = (
+				DB220A0326875D2D009F8236 /* WebAPIResult.swift */,
 			);
 			path = WebAPIResult;
 			sourceTree = "<group>";
@@ -507,6 +518,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		DB220A0526875D36009F8236 /* ServiceResult */ = {
+			isa = PBXGroup;
+			children = (
+				DB220A0626875D41009F8236 /* ServiceResult.swift */,
+				DB220A0826875D5D009F8236 /* ServiceResultConvertor.swift */,
+			);
+			path = ServiceResult;
+			sourceTree = "<group>";
+		};
 		DBA7352B2686F62F00630516 = {
 			isa = PBXGroup;
 			children = (
@@ -795,12 +815,15 @@
 				DB22096F26870972009F8236 /* URLSessionWebAPIWorker.swift in Sources */,
 				DB2209F62687224C009F8236 /* Repo.swift in Sources */,
 				DB2209AA26870D8D009F8236 /* AlertAction.swift in Sources */,
+				DB220A0926875D5D009F8236 /* ServiceResultConvertor.swift in Sources */,
 				DBA735642686F8AF00630516 /* LeftNavigationButtonView.swift in Sources */,
 				DB22098D26870A51009F8236 /* WebAPIResponseErrorFactory.swift in Sources */,
 				DB2209E326871A7B009F8236 /* NotifiersFactory.swift in Sources */,
 				DB22097126870988009F8236 /* URLRequestComposer.swift in Sources */,
 				DB22098C26870A51009F8236 /* WebAPIResponseError.swift in Sources */,
 				DB2209AD26870D8D009F8236 /* StatusBarStyle.swift in Sources */,
+				DB220A0726875D41009F8236 /* ServiceResult.swift in Sources */,
+				DB220A0226875CD5009F8236 /* GetReposWebAPIWorker.swift in Sources */,
 				DBA735542686F74400630516 /* Application.swift in Sources */,
 				DBA735632686F8AF00630516 /* TitledNavigationBarView.swift in Sources */,
 				DB22098A26870A51009F8236 /* WebAPIRequestError.swift in Sources */,
@@ -821,6 +844,7 @@
 				DB22099726870C43009F8236 /* ReposListVC.swift in Sources */,
 				DB2209DD268719F3009F8236 /* FirstScreenService.swift in Sources */,
 				DB2209D726870FF4009F8236 /* CurrentLanguageChangedNotifier.swift in Sources */,
+				DB220A0426875D2D009F8236 /* WebAPIResult.swift in Sources */,
 				DB2209BF26870E3D009F8236 /* ThemesFactory.swift in Sources */,
 				DB2209CE26870F17009F8236 /* CurrentThemeChangedNotifier.swift in Sources */,
 				DB2209C026870E3D009F8236 /* Language.swift in Sources */,
