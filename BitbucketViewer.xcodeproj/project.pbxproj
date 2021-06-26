@@ -68,6 +68,10 @@
 		DB220A0926875D5D009F8236 /* ServiceResultConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A0826875D5D009F8236 /* ServiceResultConvertor.swift */; };
 		DB220A0C26875F0C009F8236 /* GetReposService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A0B26875F0C009F8236 /* GetReposService.swift */; };
 		DB220A1126876834009F8236 /* RepoItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A1026876834009F8236 /* RepoItemView.swift */; };
+		DB220A1326876BF3009F8236 /* RepoItemCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A1226876BF3009F8236 /* RepoItemCellConfigurator.swift */; };
+		DB220A1526876C1A009F8236 /* ContainerTableCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A1426876C1A009F8236 /* ContainerTableCellConfigurator.swift */; };
+		DB220A1726876C36009F8236 /* ContainerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A1626876C36009F8236 /* ContainerTableCell.swift */; };
+		DB220A1926876C56009F8236 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A1826876C56009F8236 /* UITableView+Extension.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -143,6 +147,10 @@
 		DB220A0826875D5D009F8236 /* ServiceResultConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceResultConvertor.swift; sourceTree = "<group>"; };
 		DB220A0B26875F0C009F8236 /* GetReposService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposService.swift; sourceTree = "<group>"; };
 		DB220A1026876834009F8236 /* RepoItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItemView.swift; sourceTree = "<group>"; };
+		DB220A1226876BF3009F8236 /* RepoItemCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItemCellConfigurator.swift; sourceTree = "<group>"; };
+		DB220A1426876C1A009F8236 /* ContainerTableCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableCellConfigurator.swift; sourceTree = "<group>"; };
+		DB220A1626876C36009F8236 /* ContainerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableCell.swift; sourceTree = "<group>"; };
+		DB220A1826876C56009F8236 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -561,6 +569,7 @@
 			isa = PBXGroup;
 			children = (
 				DB220A1026876834009F8236 /* RepoItemView.swift */,
+				DB220A1226876BF3009F8236 /* RepoItemCellConfigurator.swift */,
 			);
 			path = RepoItem;
 			sourceTree = "<group>";
@@ -705,6 +714,7 @@
 				DBA735612686F8AF00630516 /* LeftNavigationButtonView.swift */,
 				DBA7355F2686F8AF00630516 /* ScreenNavigationBarView.swift */,
 				DBA735602686F8AF00630516 /* TitledNavigationBarView.swift */,
+				DB220A1626876C36009F8236 /* ContainerTableCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -717,6 +727,7 @@
 				DB2209EC26871D81009F8236 /* SwipeNavigationController.swift */,
 				DB2209F02687207F009F8236 /* TableViewController.swift */,
 				DB2209F226872092009F8236 /* TableCellConfigurator.swift */,
+				DB220A1426876C1A009F8236 /* ContainerTableCellConfigurator.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -727,6 +738,7 @@
 				DBA7356D2686F9D500630516 /* UIButton+Extension.swift */,
 				DBA7356F2686FA2600630516 /* UIView+Extension.swift */,
 				DB2209C326870E67009F8236 /* UIColor+Extension.swift */,
+				DB220A1826876C56009F8236 /* UITableView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -888,16 +900,20 @@
 				DB220A1126876834009F8236 /* RepoItemView.swift in Sources */,
 				DB2209C026870E3D009F8236 /* Language.swift in Sources */,
 				DB22099926870C6F009F8236 /* InitViewController.swift in Sources */,
+				DB220A1326876BF3009F8236 /* RepoItemCellConfigurator.swift in Sources */,
 				DB220A00268759C2009F8236 /* ISO8601DateConvertor.swift in Sources */,
 				DB2209B026870DC3009F8236 /* AppearanceConfigurable.swift in Sources */,
+				DB220A1926876C56009F8236 /* UITableView+Extension.swift in Sources */,
 				DB220A0C26875F0C009F8236 /* GetReposService.swift in Sources */,
 				DB2209AB26870D8D009F8236 /* AlertViewModel.swift in Sources */,
 				DB2209BE26870E3D009F8236 /* Theme.swift in Sources */,
 				DB2209FD26872496009F8236 /* RepoJSONParser.swift in Sources */,
 				DB22098826870A51009F8236 /* WebAPIFailure.swift in Sources */,
 				DB2209FB268723A9009F8236 /* RepoUserJSONParser.swift in Sources */,
+				DB220A1526876C1A009F8236 /* ContainerTableCellConfigurator.swift in Sources */,
 				DB2209D026870F31009F8236 /* CurrentAppearanceChangedNotifier.swift in Sources */,
 				DB22099426870A8D009F8236 /* WebAPIWorkersFactory.swift in Sources */,
+				DB220A1726876C36009F8236 /* ContainerTableCell.swift in Sources */,
 				DB2209F12687207F009F8236 /* TableViewController.swift in Sources */,
 				DB2209B326870DEA009F8236 /* VoidAction.swift in Sources */,
 				DB2209EB26871C1C009F8236 /* ReposListView.swift in Sources */,
