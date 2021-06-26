@@ -48,6 +48,10 @@
 		DB2209D526870FE6009F8236 /* LanguagesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209D426870FE6009F8236 /* LanguagesService.swift */; };
 		DB2209D726870FF4009F8236 /* CurrentLanguageChangedNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209D626870FF4009F8236 /* CurrentLanguageChangedNotifier.swift */; };
 		DB2209DA26871046009F8236 /* StringsLocalizeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209D926871046009F8236 /* StringsLocalizeService.swift */; };
+		DB2209DD268719F3009F8236 /* FirstScreenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209DC268719F3009F8236 /* FirstScreenService.swift */; };
+		DB2209E126871A24009F8236 /* ServicesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209E026871A24009F8236 /* ServicesFactory.swift */; };
+		DB2209E326871A7B009F8236 /* NotifiersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209E226871A7A009F8236 /* NotifiersFactory.swift */; };
+		DB2209E726871AD7009F8236 /* ReferenceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209E626871AD7009F8236 /* ReferenceStorage.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -103,6 +107,10 @@
 		DB2209D426870FE6009F8236 /* LanguagesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesService.swift; sourceTree = "<group>"; };
 		DB2209D626870FF4009F8236 /* CurrentLanguageChangedNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLanguageChangedNotifier.swift; sourceTree = "<group>"; };
 		DB2209D926871046009F8236 /* StringsLocalizeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsLocalizeService.swift; sourceTree = "<group>"; };
+		DB2209DC268719F3009F8236 /* FirstScreenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenService.swift; sourceTree = "<group>"; };
+		DB2209E026871A24009F8236 /* ServicesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesFactory.swift; sourceTree = "<group>"; };
+		DB2209E226871A7A009F8236 /* NotifiersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiersFactory.swift; sourceTree = "<group>"; };
+		DB2209E626871AD7009F8236 /* ReferenceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceStorage.swift; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -355,6 +363,7 @@
 		DB2209C526870EB2009F8236 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				DB2209DB268719EB009F8236 /* Start */,
 				DB2209D82687103A009F8236 /* Localization */,
 				DB2209D326870FD7009F8236 /* Languages */,
 				DB2209C626870EBF009F8236 /* Themes */,
@@ -407,6 +416,47 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		DB2209DB268719EB009F8236 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				DB2209DC268719F3009F8236 /* FirstScreenService.swift */,
+			);
+			path = Start;
+			sourceTree = "<group>";
+		};
+		DB2209DE26871A13009F8236 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DB2209C526870EB2009F8236 /* Application */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DB2209DF26871A19009F8236 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DB2209E026871A24009F8236 /* ServicesFactory.swift */,
+				DB2209E226871A7A009F8236 /* NotifiersFactory.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DB2209E426871AB9009F8236 /* CacheLayer */ = {
+			isa = PBXGroup;
+			children = (
+				DB2209E526871AC8009F8236 /* RAMStorage */,
+			);
+			path = CacheLayer;
+			sourceTree = "<group>";
+		};
+		DB2209E526871AC8009F8236 /* RAMStorage */ = {
+			isa = PBXGroup;
+			children = (
+				DB2209E626871AD7009F8236 /* ReferenceStorage.swift */,
+			);
+			path = RAMStorage;
+			sourceTree = "<group>";
+		};
 		DBA7352B2686F62F00630516 = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +481,7 @@
 				DBA7354B2686F64900630516 /* ApplicationLayer */,
 				DBA7354D2686F65A00630516 /* ModelLayer */,
 				DBA7354F2686F68500630516 /* NetworkLayer */,
+				DB2209E426871AB9009F8236 /* CacheLayer */,
 				DBA7354C2686F65200630516 /* PresentationLayer */,
 			);
 			path = BitbucketViewer;
@@ -493,7 +544,8 @@
 		DBA735562686F7A500630516 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				DB2209C526870EB2009F8236 /* Application */,
+				DB2209DE26871A13009F8236 /* Services */,
+				DB2209DF26871A19009F8236 /* Helpers */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -690,6 +742,7 @@
 				DB2209AA26870D8D009F8236 /* AlertAction.swift in Sources */,
 				DBA735642686F8AF00630516 /* LeftNavigationButtonView.swift in Sources */,
 				DB22098D26870A51009F8236 /* WebAPIResponseErrorFactory.swift in Sources */,
+				DB2209E326871A7B009F8236 /* NotifiersFactory.swift in Sources */,
 				DB22097126870988009F8236 /* URLRequestComposer.swift in Sources */,
 				DB22098C26870A51009F8236 /* WebAPIResponseError.swift in Sources */,
 				DB2209AD26870D8D009F8236 /* StatusBarStyle.swift in Sources */,
@@ -706,8 +759,10 @@
 				DB22099226870A6A009F8236 /* JSON.swift in Sources */,
 				DB22098926870A51009F8236 /* WebAPIFailureConvertor.swift in Sources */,
 				DB22098626870A51009F8236 /* ServiceError.swift in Sources */,
+				DB2209E126871A24009F8236 /* ServicesFactory.swift in Sources */,
 				DB22098E26870A51009F8236 /* WebAPIResponseErrorJSONConvertor.swift in Sources */,
 				DB22099726870C43009F8236 /* ReposListVC.swift in Sources */,
+				DB2209DD268719F3009F8236 /* FirstScreenService.swift in Sources */,
 				DB2209D726870FF4009F8236 /* CurrentLanguageChangedNotifier.swift in Sources */,
 				DB2209BF26870E3D009F8236 /* ThemesFactory.swift in Sources */,
 				DB2209CE26870F17009F8236 /* CurrentThemeChangedNotifier.swift in Sources */,
@@ -722,6 +777,7 @@
 				DB2209B326870DEA009F8236 /* VoidAction.swift in Sources */,
 				DBA7355E2686F85D00630516 /* InitView.swift in Sources */,
 				DBA735522686F73B00630516 /* main.swift in Sources */,
+				DB2209E726871AD7009F8236 /* ReferenceStorage.swift in Sources */,
 				DB2209C226870E3D009F8236 /* LanguagesFactory.swift in Sources */,
 				DBA735702686FA2600630516 /* UIView+Extension.swift in Sources */,
 				DB22098F26870A51009F8236 /* WebAPIResponseErrorCode.swift in Sources */,
