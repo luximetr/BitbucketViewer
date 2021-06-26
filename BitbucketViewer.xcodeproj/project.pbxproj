@@ -59,6 +59,7 @@
 		DB2209F326872092009F8236 /* TableCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209F226872092009F8236 /* TableCellConfigurator.swift */; };
 		DB2209F62687224C009F8236 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209F52687224C009F8236 /* Repo.swift */; };
 		DB2209F926872359009F8236 /* RepoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209F826872359009F8236 /* RepoUser.swift */; };
+		DB2209FB268723A9009F8236 /* RepoUserJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209FA268723A9009F8236 /* RepoUserJSONParser.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -125,6 +126,7 @@
 		DB2209F226872092009F8236 /* TableCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellConfigurator.swift; sourceTree = "<group>"; };
 		DB2209F52687224C009F8236 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		DB2209F826872359009F8236 /* RepoUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUser.swift; sourceTree = "<group>"; };
+		DB2209FA268723A9009F8236 /* RepoUserJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUserJSONParser.swift; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				DB2209F826872359009F8236 /* RepoUser.swift */,
+				DB2209FA268723A9009F8236 /* RepoUserJSONParser.swift */,
 			);
 			path = RepoUser;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				DB2209AB26870D8D009F8236 /* AlertViewModel.swift in Sources */,
 				DB2209BE26870E3D009F8236 /* Theme.swift in Sources */,
 				DB22098826870A51009F8236 /* WebAPIFailure.swift in Sources */,
+				DB2209FB268723A9009F8236 /* RepoUserJSONParser.swift in Sources */,
 				DB2209D026870F31009F8236 /* CurrentAppearanceChangedNotifier.swift in Sources */,
 				DB22099426870A8D009F8236 /* WebAPIWorkersFactory.swift in Sources */,
 				DB2209F12687207F009F8236 /* TableViewController.swift in Sources */,
