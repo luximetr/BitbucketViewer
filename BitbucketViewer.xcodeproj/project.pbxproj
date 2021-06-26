@@ -57,6 +57,8 @@
 		DB2209ED26871D81009F8236 /* SwipeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209EC26871D81009F8236 /* SwipeNavigationController.swift */; };
 		DB2209F12687207F009F8236 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209F02687207F009F8236 /* TableViewController.swift */; };
 		DB2209F326872092009F8236 /* TableCellConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209F226872092009F8236 /* TableCellConfigurator.swift */; };
+		DB2209F62687224C009F8236 /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209F52687224C009F8236 /* Repo.swift */; };
+		DB2209F926872359009F8236 /* RepoUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209F826872359009F8236 /* RepoUser.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -121,6 +123,8 @@
 		DB2209EC26871D81009F8236 /* SwipeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeNavigationController.swift; sourceTree = "<group>"; };
 		DB2209F02687207F009F8236 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		DB2209F226872092009F8236 /* TableCellConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellConfigurator.swift; sourceTree = "<group>"; };
+		DB2209F52687224C009F8236 /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
+		DB2209F826872359009F8236 /* RepoUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUser.swift; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -346,6 +350,8 @@
 		DB2209B426870E14009F8236 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				DB2209F42687223B009F8236 /* Repo */,
+				DB2209F726872313009F8236 /* RepoUser */,
 				DB2209B926870E3D009F8236 /* Language */,
 				DB2209B526870E3D009F8236 /* Theme */,
 			);
@@ -467,6 +473,22 @@
 				DB2209E626871AD7009F8236 /* ReferenceStorage.swift */,
 			);
 			path = RAMStorage;
+			sourceTree = "<group>";
+		};
+		DB2209F42687223B009F8236 /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				DB2209F52687224C009F8236 /* Repo.swift */,
+			);
+			path = Repo;
+			sourceTree = "<group>";
+		};
+		DB2209F726872313009F8236 /* RepoUser */ = {
+			isa = PBXGroup;
+			children = (
+				DB2209F826872359009F8236 /* RepoUser.swift */,
+			);
+			path = RepoUser;
 			sourceTree = "<group>";
 		};
 		DBA7352B2686F62F00630516 = {
@@ -754,6 +776,7 @@
 				DB2209A826870D8D009F8236 /* AppearancesFactory.swift in Sources */,
 				DB22099B26870C96009F8236 /* ScreenController.swift in Sources */,
 				DB22096F26870972009F8236 /* URLSessionWebAPIWorker.swift in Sources */,
+				DB2209F62687224C009F8236 /* Repo.swift in Sources */,
 				DB2209AA26870D8D009F8236 /* AlertAction.swift in Sources */,
 				DBA735642686F8AF00630516 /* LeftNavigationButtonView.swift in Sources */,
 				DB22098D26870A51009F8236 /* WebAPIResponseErrorFactory.swift in Sources */,
@@ -774,6 +797,7 @@
 				DB2209E926871BC8009F8236 /* ReposListCoordinator.swift in Sources */,
 				DB22099226870A6A009F8236 /* JSON.swift in Sources */,
 				DB22098926870A51009F8236 /* WebAPIFailureConvertor.swift in Sources */,
+				DB2209F926872359009F8236 /* RepoUser.swift in Sources */,
 				DB22098626870A51009F8236 /* ServiceError.swift in Sources */,
 				DB2209E126871A24009F8236 /* ServicesFactory.swift in Sources */,
 				DB22098E26870A51009F8236 /* WebAPIResponseErrorJSONConvertor.swift in Sources */,
