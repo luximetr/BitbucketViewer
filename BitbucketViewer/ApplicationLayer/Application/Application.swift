@@ -18,9 +18,23 @@ class Application: UIApplication, UIApplicationDelegate {
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     let window = UIWindow()
     self.window = window
-//    let service = servicesFactory.createFirstScreenService(window: window)
-//    service.showFirstScreen()
+    let service = servicesFactory.createFirstScreenService(window: window)
+    service.showFirstScreen()
     return true
   }
+  
+  // MARK: - Layers
+  
+  private lazy var referenceStorage = ReferenceStorage()
+  
+  // MARK: - Factories
+  
+  private lazy var servicesFactory: ServicesFactory = {
+    return ServicesFactory(
+      application: self,
+      session: .shared,
+      referenceStorage: referenceStorage
+    )
+  }()
 
 }

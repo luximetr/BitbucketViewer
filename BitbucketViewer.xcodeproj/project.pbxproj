@@ -52,6 +52,9 @@
 		DB2209E126871A24009F8236 /* ServicesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209E026871A24009F8236 /* ServicesFactory.swift */; };
 		DB2209E326871A7B009F8236 /* NotifiersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209E226871A7A009F8236 /* NotifiersFactory.swift */; };
 		DB2209E726871AD7009F8236 /* ReferenceStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209E626871AD7009F8236 /* ReferenceStorage.swift */; };
+		DB2209E926871BC8009F8236 /* ReposListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209E826871BC8009F8236 /* ReposListCoordinator.swift */; };
+		DB2209EB26871C1C009F8236 /* ReposListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209EA26871C1C009F8236 /* ReposListView.swift */; };
+		DB2209ED26871D81009F8236 /* SwipeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2209EC26871D81009F8236 /* SwipeNavigationController.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -111,6 +114,9 @@
 		DB2209E026871A24009F8236 /* ServicesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesFactory.swift; sourceTree = "<group>"; };
 		DB2209E226871A7A009F8236 /* NotifiersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifiersFactory.swift; sourceTree = "<group>"; };
 		DB2209E626871AD7009F8236 /* ReferenceStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceStorage.swift; sourceTree = "<group>"; };
+		DB2209E826871BC8009F8236 /* ReposListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListCoordinator.swift; sourceTree = "<group>"; };
+		DB2209EA26871C1C009F8236 /* ReposListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposListView.swift; sourceTree = "<group>"; };
+		DB2209EC26871D81009F8236 /* SwipeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeNavigationController.swift; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -266,6 +272,8 @@
 			isa = PBXGroup;
 			children = (
 				DB22099626870C43009F8236 /* ReposListVC.swift */,
+				DB2209EA26871C1C009F8236 /* ReposListView.swift */,
+				DB2209E826871BC8009F8236 /* ReposListCoordinator.swift */,
 			);
 			path = ReposList;
 			sourceTree = "<group>";
@@ -605,6 +613,7 @@
 			children = (
 				DB22099826870C6F009F8236 /* InitViewController.swift */,
 				DB22099A26870C96009F8236 /* ScreenController.swift */,
+				DB2209EC26871D81009F8236 /* SwipeNavigationController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -756,6 +765,7 @@
 				DB2209AC26870D8D009F8236 /* StatusBarStyleConvertor.swift in Sources */,
 				DB2209DA26871046009F8236 /* StringsLocalizeService.swift in Sources */,
 				DB2209D526870FE6009F8236 /* LanguagesService.swift in Sources */,
+				DB2209E926871BC8009F8236 /* ReposListCoordinator.swift in Sources */,
 				DB22099226870A6A009F8236 /* JSON.swift in Sources */,
 				DB22098926870A51009F8236 /* WebAPIFailureConvertor.swift in Sources */,
 				DB22098626870A51009F8236 /* ServiceError.swift in Sources */,
@@ -775,9 +785,11 @@
 				DB2209D026870F31009F8236 /* CurrentAppearanceChangedNotifier.swift in Sources */,
 				DB22099426870A8D009F8236 /* WebAPIWorkersFactory.swift in Sources */,
 				DB2209B326870DEA009F8236 /* VoidAction.swift in Sources */,
+				DB2209EB26871C1C009F8236 /* ReposListView.swift in Sources */,
 				DBA7355E2686F85D00630516 /* InitView.swift in Sources */,
 				DBA735522686F73B00630516 /* main.swift in Sources */,
 				DB2209E726871AD7009F8236 /* ReferenceStorage.swift in Sources */,
+				DB2209ED26871D81009F8236 /* SwipeNavigationController.swift in Sources */,
 				DB2209C226870E3D009F8236 /* LanguagesFactory.swift in Sources */,
 				DBA735702686FA2600630516 /* UIView+Extension.swift in Sources */,
 				DB22098F26870A51009F8236 /* WebAPIResponseErrorCode.swift in Sources */,

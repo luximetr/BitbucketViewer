@@ -24,11 +24,7 @@ class FirstScreenService {
   // MARK: - Routing
   
   func showFirstScreen() {
-  }
-  
-  private func showAuth() {
-  }
-  
-  private func showMainScreen() {
+    let reposListCoordinator = ReposListCoordinator(servicesFactory: servicesFactory)
+    reposListCoordinator.showReposListScreen(window: window)
   }
 }

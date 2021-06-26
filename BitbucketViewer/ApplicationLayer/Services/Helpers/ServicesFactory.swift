@@ -31,4 +31,49 @@ class ServicesFactory {
     )
     self.referenceStorage = referenceStorage
   }
+  
+  // MARK: - Start
+  
+  func createFirstScreenService(window: UIWindow) -> FirstScreenService {
+    return FirstScreenService(
+      window: window,
+      servicesFactory: self
+    )
+  }
+  
+  // MARK: - Theme
+  
+  func createThemesService() -> ThemesService {
+    let key = "themesService"
+    if let service = referenceStorage.getObject(key) as? ThemesService {
+      return service
+    } else {
+      let service = ThemesService(
+        currentThemeChangedNotifier: notifiersFactory.createCurrentThemeChangedNotifier()
+      )
+      referenceStorage.storeObject(key, object: service)
+      return service
+    }
+  }
+  
+  // MARK: - Appearance
+  
+  func createAppearanceService() -> AppearanceService {
+    let key = "appearanceService"
+    if let service = referenceStorage.getObject(key) as? AppearanceService {
+      return service
+    } else {
+      let service = AppearanceService(
+        themesService: createThemesService(),
+        currentAppearanceChangedNotifier: notifiersFactory.createCurrentAppearanceChangedNotifier(),
+        progressHUDAppearanceService: createProgressHUDAppearanceService()
+      )
+      referenceStorage.storeObject(key, object: service)
+      return service
+    }
+  }
+  
+  private func createProgressHUDAppearanceService() -> ProgressHUDAppearanceService {
+    return ProgressHUDAppearanceService()
+  }
 }
