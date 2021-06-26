@@ -21,6 +21,10 @@ class RepoItemCellConfigurator: ContainerTableCellConfigurator<RepoItemView> {
   let createdOn: String?
   var tapAction: VoidAction?
   
+  // MARK: - Services
+  
+  var imageSetService: ImageSetFromURLService?
+  
   // MARK: - Life cycle
   
   init(avatarURL: URL?,
@@ -38,6 +42,16 @@ class RepoItemCellConfigurator: ContainerTableCellConfigurator<RepoItemView> {
   
   override func setupCellViewUI(_ view: ContainerTableCellConfigurator<RepoItemView>.ViewType) {
     super.setupCellViewUI(view)
-    
+    imageSetService?.setImage(imageView: view.avatarImageView, imageURL: avatarURL)
+    view.displayNameLabel.text = displayName
+    view.typeLabel.text = type
+    view.createdOnLabel.text = createdOn
+  }
+  
+  // MARK: - Setup view - Actions
+  
+  override func setupCellViewActions(_ view: ViewType) {
+    super.setupCellViewActions(view)
+    view.tapAction = tapAction
   }
 }
