@@ -78,6 +78,8 @@
 		DB220A2426882E5D009F8236 /* GetReposWebAPIParamsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A2326882E5D009F8236 /* GetReposWebAPIParamsComposer.swift */; };
 		DB220A6B268830ED009F8236 /* BitbucketViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A6A268830ED009F8236 /* BitbucketViewerTests.swift */; };
 		DB220A7A26883266009F8236 /* RepoJSONParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A7926883266009F8236 /* RepoJSONParserTests.swift */; };
+		DB220A7C268837DC009F8236 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A7B268837DC009F8236 /* Date+Extension.swift */; };
+		DB220A7E26883C93009F8236 /* TimeZone+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A7D26883C93009F8236 /* TimeZone+Extension.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -175,6 +177,8 @@
 		DB220A6A268830ED009F8236 /* BitbucketViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitbucketViewerTests.swift; sourceTree = "<group>"; };
 		DB220A6C268830ED009F8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB220A7926883266009F8236 /* RepoJSONParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoJSONParserTests.swift; sourceTree = "<group>"; };
+		DB220A7B268837DC009F8236 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		DB220A7D26883C93009F8236 /* TimeZone+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+Extension.swift"; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -558,6 +562,8 @@
 			isa = PBXGroup;
 			children = (
 				DB2209FF268759C2009F8236 /* ISO8601DateConvertor.swift */,
+				DB220A7B268837DC009F8236 /* Date+Extension.swift */,
+				DB220A7D26883C93009F8236 /* TimeZone+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1078,6 +1084,7 @@
 				DB2209BE26870E3D009F8236 /* Theme.swift in Sources */,
 				DB2209FD26872496009F8236 /* RepoJSONParser.swift in Sources */,
 				DB22098826870A51009F8236 /* WebAPIFailure.swift in Sources */,
+				DB220A7E26883C93009F8236 /* TimeZone+Extension.swift in Sources */,
 				DB2209FB268723A9009F8236 /* RepoUserJSONParser.swift in Sources */,
 				DB220A1526876C1A009F8236 /* ContainerTableCellConfigurator.swift in Sources */,
 				DB2209D026870F31009F8236 /* CurrentAppearanceChangedNotifier.swift in Sources */,
@@ -1089,6 +1096,7 @@
 				DB2209EB26871C1C009F8236 /* ReposListView.swift in Sources */,
 				DB2209F326872092009F8236 /* TableCellConfigurator.swift in Sources */,
 				DBA7355E2686F85D00630516 /* InitView.swift in Sources */,
+				DB220A7C268837DC009F8236 /* Date+Extension.swift in Sources */,
 				DBA735522686F73B00630516 /* main.swift in Sources */,
 				DB2209E726871AD7009F8236 /* ReferenceStorage.swift in Sources */,
 				DB2209ED26871D81009F8236 /* SwipeNavigationController.swift in Sources */,

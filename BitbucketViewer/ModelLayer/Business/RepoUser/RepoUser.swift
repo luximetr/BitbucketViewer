@@ -9,7 +9,7 @@ import Foundation
 
 typealias RepoUserIdType = String
 
-struct RepoUser {
+struct RepoUser: Equatable {
   let id: RepoUserIdType
   let avatar: URL?
 }
