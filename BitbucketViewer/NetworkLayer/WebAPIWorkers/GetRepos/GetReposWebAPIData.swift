@@ -7,7 +7,13 @@
 
 import Foundation
 
-struct GetReposWebAPIData {
+struct GetReposWebAPIData: Equatable {
   let repos: [Repo]
   let nextPageDate: Date?
+  
+  static func == (lhs: Self, rhs: Self) -> Bool {
+    return
+      lhs.repos == rhs.repos &&
+      Date.isEqual(lhs.nextPageDate, rhs.nextPageDate)
+  }
 }

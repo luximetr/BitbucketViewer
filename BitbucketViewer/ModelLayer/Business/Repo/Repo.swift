@@ -21,7 +21,7 @@ struct Repo: Equatable {
       lhs.id == rhs.id &&
       lhs.displayName == rhs.displayName &&
       lhs.type == rhs.type &&
-      Date.isEqual(lhs.createdOn, rhs: rhs.createdOn) &&
+      Date.isEqual(lhs.createdOn, rhs.createdOn) &&
       lhs.owner == rhs.owner
   }
 }

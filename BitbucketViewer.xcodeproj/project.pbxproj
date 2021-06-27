@@ -76,11 +76,11 @@
 		DB220A202688268D009F8236 /* GetReposWebAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A1F2688268D009F8236 /* GetReposWebAPIData.swift */; };
 		DB220A22268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A21268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift */; };
 		DB220A2426882E5D009F8236 /* GetReposWebAPIParamsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A2326882E5D009F8236 /* GetReposWebAPIParamsComposer.swift */; };
-		DB220A6B268830ED009F8236 /* BitbucketViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A6A268830ED009F8236 /* BitbucketViewerTests.swift */; };
 		DB220A7A26883266009F8236 /* RepoJSONParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A7926883266009F8236 /* RepoJSONParserTests.swift */; };
 		DB220A7C268837DC009F8236 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A7B268837DC009F8236 /* Date+Extension.swift */; };
 		DB220A7E26883C93009F8236 /* TimeZone+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A7D26883C93009F8236 /* TimeZone+Extension.swift */; };
 		DB220A8126884334009F8236 /* RepoUserJSONParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A8026884334009F8236 /* RepoUserJSONParserTests.swift */; };
+		DB220A842688548E009F8236 /* GetReposWebAPIDataJSONParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A832688548E009F8236 /* GetReposWebAPIDataJSONParserTests.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -175,12 +175,12 @@
 		DB220A21268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposWebAPIDataJSONParser.swift; sourceTree = "<group>"; };
 		DB220A2326882E5D009F8236 /* GetReposWebAPIParamsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposWebAPIParamsComposer.swift; sourceTree = "<group>"; };
 		DB220A68268830ED009F8236 /* BitbucketViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitbucketViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB220A6A268830ED009F8236 /* BitbucketViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitbucketViewerTests.swift; sourceTree = "<group>"; };
 		DB220A6C268830ED009F8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB220A7926883266009F8236 /* RepoJSONParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoJSONParserTests.swift; sourceTree = "<group>"; };
 		DB220A7B268837DC009F8236 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		DB220A7D26883C93009F8236 /* TimeZone+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+Extension.swift"; sourceTree = "<group>"; };
 		DB220A8026884334009F8236 /* RepoUserJSONParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUserJSONParserTests.swift; sourceTree = "<group>"; };
+		DB220A832688548E009F8236 /* GetReposWebAPIDataJSONParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposWebAPIDataJSONParserTests.swift; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -647,7 +647,6 @@
 				DB220A7226883175009F8236 /* Application */,
 				DB220A74268831B6009F8236 /* ModelLayer */,
 				DB220A75268831BE009F8236 /* NetworkLayer */,
-				DB220A6A268830ED009F8236 /* BitbucketViewerTests.swift */,
 			);
 			path = BitbucketViewerTests;
 			sourceTree = "<group>";
@@ -687,6 +686,7 @@
 		DB220A762688321E009F8236 /* WebAPIWorkers */ = {
 			isa = PBXGroup;
 			children = (
+				DB220A8226885478009F8236 /* GetRepos */,
 			);
 			path = WebAPIWorkers;
 			sourceTree = "<group>";
@@ -714,6 +714,14 @@
 				DB220A8026884334009F8236 /* RepoUserJSONParserTests.swift */,
 			);
 			path = RepoUser;
+			sourceTree = "<group>";
+		};
+		DB220A8226885478009F8236 /* GetRepos */ = {
+			isa = PBXGroup;
+			children = (
+				DB220A832688548E009F8236 /* GetReposWebAPIDataJSONParserTests.swift */,
+			);
+			path = GetRepos;
 			sourceTree = "<group>";
 		};
 		DBA7352B2686F62F00630516 = {
@@ -1030,9 +1038,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB220A842688548E009F8236 /* GetReposWebAPIDataJSONParserTests.swift in Sources */,
 				DB220A8126884334009F8236 /* RepoUserJSONParserTests.swift in Sources */,
 				DB220A7A26883266009F8236 /* RepoJSONParserTests.swift in Sources */,
-				DB220A6B268830ED009F8236 /* BitbucketViewerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

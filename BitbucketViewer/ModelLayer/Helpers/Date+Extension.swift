@@ -22,7 +22,7 @@ extension Date {
     return Calendar.current.date(from: dateComponents)
   }
   
-  static func isEqual(_ lhs: Date?, rhs: Date?) -> Bool {
+  static func isEqual(_ lhs: Date?, _ rhs: Date?) -> Bool {
     if lhs == nil && rhs == nil { return true }
     guard let lhs = lhs, let rhs = rhs else { return false }
     return Calendar.current.compare(lhs, to: rhs, toGranularity: .nanosecond) == .orderedSame
