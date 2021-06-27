@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RepoUserDetailsCoordinator {
+class RepoUserDetailsCoordinator: RepoUserDetailsVCOutput {
   
   // MARK: - Dependencies
   
@@ -26,6 +26,12 @@ class RepoUserDetailsCoordinator {
     sourceVC.showScreen(vc, animation: .push)
   }
   
+  // MARK: - RepoUserDetailsVCOutput
+  
+  func didTapOnBack(in vc: UIViewController) {
+    vc.closeScreen(animation: .pop)
+  }
+  
   // MARK: - Create screen
   
   private func createRepoUserDetailsVC(repoUser: RepoUser) -> UIViewController {
@@ -37,6 +43,8 @@ class RepoUserDetailsCoordinator {
       repoUser: repoUser,
       currentAppearanceService: servicesFactory.createAppearanceService()
     )
+    vc.output = self
+    view.delegate = vc
     return vc
   }
 }

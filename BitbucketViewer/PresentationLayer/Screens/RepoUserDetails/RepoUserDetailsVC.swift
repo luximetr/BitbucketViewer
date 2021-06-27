@@ -7,11 +7,19 @@
 
 import UIKit
 
-class RepoUserDetailsVC: ScreenController {
+protocol RepoUserDetailsVCOutput {
+  func didTapOnBack(in vc: UIViewController)
+}
+
+class RepoUserDetailsVC: ScreenController, RepoUserDetailsViewDelegate {
   
   // MARK: - UI elements
   
   private let selfView: RepoUserDetailsView
+  
+  // MARK: - Dependencies
+  
+  var output: RepoUserDetailsVCOutput!
   
   // MARK: - Data
   
@@ -50,5 +58,11 @@ class RepoUserDetailsVC: ScreenController {
     selfView.displayWebsite("Website: \(repoUser.website?.absoluteString ?? "")")
     selfView.displayType("Type: \(repoUser.type ?? "")")
     selfView.displayNickname("Nickname: \(repoUser.nickname ?? "")")
+  }
+  
+  // MARK: - RepoUserDetailsViewDelegate
+  
+  func didTapOnBack() {
+    output.didTapOnBack(in: self)
   }
 }

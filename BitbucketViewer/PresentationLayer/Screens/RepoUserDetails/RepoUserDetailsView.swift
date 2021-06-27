@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol RepoUserDetailsViewDelegate: AnyObject {
+  func didTapOnBack()
+}
+
 class RepoUserDetailsView: ScreenNavigationBarView, AppearanceConfigurable {
   
   // MARK: - UI elements
@@ -20,6 +24,7 @@ class RepoUserDetailsView: ScreenNavigationBarView, AppearanceConfigurable {
   
   // MARK: - Dependencies
   
+  weak var delegate: RepoUserDetailsViewDelegate?
   private let imageSetService: ImageSetFromURLService
   
   // MARK: - Life cycle
@@ -57,6 +62,7 @@ class RepoUserDetailsView: ScreenNavigationBarView, AppearanceConfigurable {
   
   override func setup() {
     super.setup()
+    setupNavigationBarView()
     setupAvatarImageView()
     setupNameLabel()
     setupWebsiteLabel()
@@ -101,6 +107,18 @@ class RepoUserDetailsView: ScreenNavigationBarView, AppearanceConfigurable {
   
   private func setSelf(appearance: Appearance) {
     backgroundColor = appearance.background.primary
+  }
+  
+  // MARK: - Setup navigationBarView
+  
+  private func setupNavigationBarView() {
+    navigationBarView.leftButton.image = AssetsFactory.left_arrow
+    navigationBarView.leftButton.addAction(self, action: #selector(didTapBackButton))
+  }
+  
+  @objc
+  private func didTapBackButton() {
+    delegate?.didTapOnBack()
   }
   
   // MARK: - Setup avatarImageView
