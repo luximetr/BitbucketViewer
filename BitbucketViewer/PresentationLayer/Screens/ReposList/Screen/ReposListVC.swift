@@ -56,10 +56,10 @@ class ReposListVC: ScreenController, ReposListViewDelegate {
   // MARK: - Repos - Display
   
   private func prepareReposListData() {
-    loadReposList()
+    loadReposListNextPage()
   }
   
-  private func loadReposList() {
+  private func loadReposListNextPage() {
     getReposService.getRepos(
       nextPageDate: nextPageDate,
       completion: { [weak self] result in
@@ -90,6 +90,6 @@ class ReposListVC: ScreenController, ReposListViewDelegate {
   }
   
   func didTapOnNextButton() {
-    print("load next page")
+    loadReposListNextPage()
   }
 }

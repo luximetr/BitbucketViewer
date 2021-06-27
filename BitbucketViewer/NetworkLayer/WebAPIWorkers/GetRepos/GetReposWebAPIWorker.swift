@@ -11,12 +11,13 @@ class GetReposWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Dependencies
   
+  private let paramsComposer = GetReposWebAPIParamsComposer()
   private let dataJSONParser = GetReposWebAPIDataJSONParser()
   
   // MARK: - Get repos
   
-  func getRepos(completion: @escaping Completion) {
-    let request = createRequest()
+  func getRepos(nextPageDate: Date?, completion: @escaping Completion) {
+    let request = createRequest(nextPageDate: nextPageDate)
     let task = session.dataTask(
       with: request,
       completionHandler: { [weak self] data, response, error in
@@ -39,10 +40,12 @@ class GetReposWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Create request
   
-  private func createRequest() -> URLRequest {
+  private func createRequest(nextPageDate: Date?) -> URLRequest {
+    let params = paramsComposer.createParams(nextPageDate: nextPageDate)
     return createURLEncodedRequest(
       endpoint: "repositories",
-      httpMethod: "GET"
+      httpMethod: "GET",
+      params: params
     )
   }
   

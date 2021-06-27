@@ -75,6 +75,7 @@
 		DB220A1D26876E1C009F8236 /* SetImageFromURLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A1C26876E1C009F8236 /* SetImageFromURLService.swift */; };
 		DB220A202688268D009F8236 /* GetReposWebAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A1F2688268D009F8236 /* GetReposWebAPIData.swift */; };
 		DB220A22268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A21268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift */; };
+		DB220A2426882E5D009F8236 /* GetReposWebAPIParamsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A2326882E5D009F8236 /* GetReposWebAPIParamsComposer.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -157,6 +158,7 @@
 		DB220A1C26876E1C009F8236 /* SetImageFromURLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetImageFromURLService.swift; sourceTree = "<group>"; };
 		DB220A1F2688268D009F8236 /* GetReposWebAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposWebAPIData.swift; sourceTree = "<group>"; };
 		DB220A21268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposWebAPIDataJSONParser.swift; sourceTree = "<group>"; };
+		DB220A2326882E5D009F8236 /* GetReposWebAPIParamsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposWebAPIParamsComposer.swift; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -603,6 +605,7 @@
 				DB220A0126875CD5009F8236 /* GetReposWebAPIWorker.swift */,
 				DB220A1F2688268D009F8236 /* GetReposWebAPIData.swift */,
 				DB220A21268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift */,
+				DB220A2326882E5D009F8236 /* GetReposWebAPIParamsComposer.swift */,
 			);
 			path = GetRepos;
 			sourceTree = "<group>";
@@ -911,6 +914,7 @@
 				DB220A1D26876E1C009F8236 /* SetImageFromURLService.swift in Sources */,
 				DBA735542686F74400630516 /* Application.swift in Sources */,
 				DBA735632686F8AF00630516 /* TitledNavigationBarView.swift in Sources */,
+				DB220A2426882E5D009F8236 /* GetReposWebAPIParamsComposer.swift in Sources */,
 				DB22098A26870A51009F8236 /* WebAPIRequestError.swift in Sources */,
 				DB2209CA26870EE8009F8236 /* AppearanceService.swift in Sources */,
 				DB22098B26870A51009F8236 /* WebAPIRequestErrorFactory.swift in Sources */,

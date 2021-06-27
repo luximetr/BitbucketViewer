@@ -22,7 +22,7 @@ class GetReposService {
   // MARK: - Get repos
   
   func getRepos(nextPageDate: Date?, completion: @escaping Completion) {
-    getReposWebAPIWorker.getRepos(completion: { webAPIResult in
+    getReposWebAPIWorker.getRepos(nextPageDate: nextPageDate, completion: { webAPIResult in
       let result = ServiceResultConvertor().toServiceResult(webAPIResult)
       completion(result)
     })
