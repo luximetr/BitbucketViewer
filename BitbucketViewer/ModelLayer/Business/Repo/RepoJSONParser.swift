@@ -12,7 +12,7 @@ class RepoJSONParser {
   // MARK: - Dependencies
   
   private let repoUserJSONParser = RepoUserJSONParser()
-  private let dateConvertor = ISO8601DateFormatter()
+  private let dateConvertor = ISO8601DateConvertor()
   
   // MARK: - JSON -> Repo
   
@@ -39,6 +39,6 @@ class RepoJSONParser {
   
   private func parseCreatedOn(from json: JSON) -> Date? {
     guard let dateString = json["created_on"] as? String else { return nil }
-    return dateConvertor.date(from: dateString)
+    return dateConvertor.convertToDate(dateString)
   }
 }

@@ -17,7 +17,7 @@ class ISO8601DateConvertor {
   
   init() {
     dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZZZZZ"
   }
   
   // MARK: - String -> Date
