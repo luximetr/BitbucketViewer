@@ -76,6 +76,7 @@
 		DB220A202688268D009F8236 /* GetReposWebAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A1F2688268D009F8236 /* GetReposWebAPIData.swift */; };
 		DB220A22268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A21268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift */; };
 		DB220A2426882E5D009F8236 /* GetReposWebAPIParamsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A2326882E5D009F8236 /* GetReposWebAPIParamsComposer.swift */; };
+		DB220A6B268830ED009F8236 /* BitbucketViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A6A268830ED009F8236 /* BitbucketViewerTests.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -87,6 +88,16 @@
 		DBA7356E2686F9D500630516 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA7356D2686F9D500630516 /* UIButton+Extension.swift */; };
 		DBA735702686FA2600630516 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA7356F2686FA2600630516 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB220A6D268830ED009F8236 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DBA7352C2686F62F00630516 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DBA735332686F62F00630516;
+			remoteInfo = BitbucketViewer;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		56548E21577461FDCB8289CD /* Pods_BitbucketViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BitbucketViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +170,9 @@
 		DB220A1F2688268D009F8236 /* GetReposWebAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposWebAPIData.swift; sourceTree = "<group>"; };
 		DB220A21268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposWebAPIDataJSONParser.swift; sourceTree = "<group>"; };
 		DB220A2326882E5D009F8236 /* GetReposWebAPIParamsComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposWebAPIParamsComposer.swift; sourceTree = "<group>"; };
+		DB220A68268830ED009F8236 /* BitbucketViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BitbucketViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB220A6A268830ED009F8236 /* BitbucketViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitbucketViewerTests.swift; sourceTree = "<group>"; };
+		DB220A6C268830ED009F8236 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -175,6 +189,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DB220A65268830ED009F8236 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBA735312686F62F00630516 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -610,10 +631,20 @@
 			path = GetRepos;
 			sourceTree = "<group>";
 		};
+		DB220A69268830ED009F8236 /* BitbucketViewerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB220A6A268830ED009F8236 /* BitbucketViewerTests.swift */,
+				DB220A6C268830ED009F8236 /* Info.plist */,
+			);
+			path = BitbucketViewerTests;
+			sourceTree = "<group>";
+		};
 		DBA7352B2686F62F00630516 = {
 			isa = PBXGroup;
 			children = (
 				DBA735362686F62F00630516 /* BitbucketViewer */,
+				DB220A69268830ED009F8236 /* BitbucketViewerTests */,
 				DBA735352686F62F00630516 /* Products */,
 				BAEA530783051F8144132683 /* Pods */,
 				57D520620F3117D337680933 /* Frameworks */,
@@ -624,6 +655,7 @@
 			isa = PBXGroup;
 			children = (
 				DBA735342686F62F00630516 /* BitbucketViewer.app */,
+				DB220A68268830ED009F8236 /* BitbucketViewerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -782,6 +814,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		DB220A67268830ED009F8236 /* BitbucketViewerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB220A6F268830ED009F8236 /* Build configuration list for PBXNativeTarget "BitbucketViewerTests" */;
+			buildPhases = (
+				DB220A64268830ED009F8236 /* Sources */,
+				DB220A65268830ED009F8236 /* Frameworks */,
+				DB220A66268830ED009F8236 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB220A6E268830ED009F8236 /* PBXTargetDependency */,
+			);
+			name = BitbucketViewerTests;
+			productName = BitbucketViewerTests;
+			productReference = DB220A68268830ED009F8236 /* BitbucketViewerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DBA735332686F62F00630516 /* BitbucketViewer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DBA735482686F63100630516 /* Build configuration list for PBXNativeTarget "BitbucketViewer" */;
@@ -810,6 +860,10 @@
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					DB220A67268830ED009F8236 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = DBA735332686F62F00630516;
+					};
 					DBA735332686F62F00630516 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -829,11 +883,19 @@
 			projectRoot = "";
 			targets = (
 				DBA735332686F62F00630516 /* BitbucketViewer */,
+				DB220A67268830ED009F8236 /* BitbucketViewerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DB220A66268830ED009F8236 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBA735322686F62F00630516 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -888,6 +950,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DB220A64268830ED009F8236 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB220A6B268830ED009F8236 /* BitbucketViewerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DBA735302686F62F00630516 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -973,6 +1043,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DB220A6E268830ED009F8236 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DBA735332686F62F00630516 /* BitbucketViewer */;
+			targetProxy = DB220A6D268830ED009F8236 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		DBA735422686F63100630516 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -985,6 +1063,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DB220A70268830ED009F8236 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9HC298K985;
+				INFOPLIST_FILE = BitbucketViewerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = OO.BitbucketViewerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BitbucketViewer.app/BitbucketViewer";
+			};
+			name = Debug;
+		};
+		DB220A71268830ED009F8236 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9HC298K985;
+				INFOPLIST_FILE = BitbucketViewerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = OO.BitbucketViewerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BitbucketViewer.app/BitbucketViewer";
+			};
+			name = Release;
+		};
 		DBA735462686F63100630516 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1146,6 +1264,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DB220A6F268830ED009F8236 /* Build configuration list for PBXNativeTarget "BitbucketViewerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB220A70268830ED009F8236 /* Debug */,
+				DB220A71268830ED009F8236 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DBA7352F2686F62F00630516 /* Build configuration list for PBXProject "BitbucketViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
