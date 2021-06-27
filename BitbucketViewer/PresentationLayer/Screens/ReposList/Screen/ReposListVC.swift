@@ -11,7 +11,7 @@ protocol ReposListVCOutput {
   func didTapOnRepo(in vc: UIViewController, repo: Repo)
 }
 
-class ReposListVC: ScreenController, ReposListViewDelegate {
+class ReposListVC: ScreenController, ReposListViewDelegate, OverScreenLoaderDisplayable {
   
   // MARK: - UI elements
   
@@ -65,10 +65,12 @@ class ReposListVC: ScreenController, ReposListViewDelegate {
   }
   
   private func loadReposListNextPage() {
+    showOverScreenLoader()
     getReposService.getRepos(
       nextPageDate: nextPageDate,
       completion: { [weak self] result in
         DispatchQueue.main.async {
+          self?.hideOverScreenLoader()
           switch result {
             case .success(let data):
               self?.displayReposListData(data)

@@ -89,6 +89,7 @@
 		DB220A932688687D009F8236 /* RepoUserWebsiteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A922688687D009F8236 /* RepoUserWebsiteVC.swift */; };
 		DB220A9526886890009F8236 /* RepoUserWebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A9426886890009F8236 /* RepoUserWebsiteView.swift */; };
 		DB220A97268868C1009F8236 /* RepoUserWebsiteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A96268868C1009F8236 /* RepoUserWebsiteCoordinator.swift */; };
+		DB220A99268870F1009F8236 /* OverScreenLoaderDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A98268870F1009F8236 /* OverScreenLoaderDisplayable.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -197,6 +198,7 @@
 		DB220A922688687D009F8236 /* RepoUserWebsiteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUserWebsiteVC.swift; sourceTree = "<group>"; };
 		DB220A9426886890009F8236 /* RepoUserWebsiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUserWebsiteView.swift; sourceTree = "<group>"; };
 		DB220A96268868C1009F8236 /* RepoUserWebsiteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUserWebsiteCoordinator.swift; sourceTree = "<group>"; };
+		DB220A98268870F1009F8236 /* OverScreenLoaderDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverScreenLoaderDisplayable.swift; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				DB2209AF26870DC3009F8236 /* AppearanceConfigurable.swift */,
+				DB220A98268870F1009F8236 /* OverScreenLoaderDisplayable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1090,6 +1093,7 @@
 			files = (
 				DB220A9026886674009F8236 /* AssetsFactory.swift in Sources */,
 				DB220A8C26885A56009F8236 /* RepoUserDetailsCoordinator.swift in Sources */,
+				DB220A99268870F1009F8236 /* OverScreenLoaderDisplayable.swift in Sources */,
 				DBA735622686F8AF00630516 /* ScreenNavigationBarView.swift in Sources */,
 				DB2209C126870E3D009F8236 /* LanguageType.swift in Sources */,
 				DB2209A926870D8D009F8236 /* Appearance.swift in Sources */,
