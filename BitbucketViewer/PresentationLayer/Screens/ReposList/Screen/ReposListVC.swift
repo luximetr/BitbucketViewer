@@ -72,13 +72,20 @@ class ReposListVC: ScreenController, ReposListViewDelegate, OverScreenLoaderDisp
     getReposService.getRepos(
       nextPageDate: nextPageDate,
       completion: { [weak self] result in
+        guard let strongSelf = self else { return }
         DispatchQueue.main.async {
-          self?.hideOverScreenLoader()
+          strongSelf.hideOverScreenLoader()
           switch result {
             case .success(let data):
-              self?.displayReposListData(data)
+              strongSelf.displayReposListData(data)
             case .failure(let error):
-              print(error)
+              strongSelf.showErrorAlertService.showRepeatErrorAlert(
+                message: error.message,
+                in: strongSelf,
+                onRepeat: {
+                  strongSelf.loadReposListNextPage()
+                }
+              )
           }
         }
       }
