@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ReposListVCOutput {
+  func didTapOnRepo(in vc: UIViewController, repo: Repo)
+}
+
 class ReposListVC: ScreenController, ReposListViewDelegate {
   
   // MARK: - UI elements
@@ -15,6 +19,7 @@ class ReposListVC: ScreenController, ReposListViewDelegate {
   
   // MARK: - Dependencies
   
+  var output: ReposListVCOutput!
   private let getReposService: GetReposService
   
   // MARK: - Data

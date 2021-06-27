@@ -1,0 +1,48 @@
+//
+//  UIViewController+Navigation.swift
+//  BitbucketViewer
+//
+//  Created by Oleksandr Orlov on 27.06.2021.
+//
+
+import UIKit
+
+enum ShowScreenAnimation {
+  case push
+  case present
+}
+
+enum CloseScreenAnimation {
+  case pop
+  case dismiss
+}
+
+extension UIViewController {
+  
+  func showScreen(
+      _ vc: UIViewController,
+      animation: ShowScreenAnimation,
+      animated: Bool = true,
+      completion: VoidAction? = nil) {
+    switch animation {
+    case .push:
+      navigationController?.pushViewController(vc, animated: animated)
+    case .present:
+      vc.modalPresentationStyle = .fullScreen
+      present(vc, animated: animated, completion: completion)
+    }
+  }
+  
+  func closeScreen(
+        animation: CloseScreenAnimation,
+        animated: Bool = true,
+        completion: VoidAction? = nil) {
+    switch animation {
+    case .pop:
+      navigationController?.popViewController(animated: animated)
+    case .dismiss:
+      dismiss(animated: animated, completion: completion)
+    }
+  }
+  
+}

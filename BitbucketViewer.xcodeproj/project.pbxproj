@@ -81,6 +81,10 @@
 		DB220A7E26883C93009F8236 /* TimeZone+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A7D26883C93009F8236 /* TimeZone+Extension.swift */; };
 		DB220A8126884334009F8236 /* RepoUserJSONParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A8026884334009F8236 /* RepoUserJSONParserTests.swift */; };
 		DB220A842688548E009F8236 /* GetReposWebAPIDataJSONParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A832688548E009F8236 /* GetReposWebAPIDataJSONParserTests.swift */; };
+		DB220A8826885A22009F8236 /* RepoUserDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A8726885A22009F8236 /* RepoUserDetailsVC.swift */; };
+		DB220A8A26885A36009F8236 /* RepoUserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A8926885A36009F8236 /* RepoUserDetailsView.swift */; };
+		DB220A8C26885A56009F8236 /* RepoUserDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A8B26885A56009F8236 /* RepoUserDetailsCoordinator.swift */; };
+		DB220A8E26885C4E009F8236 /* UIViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A8D26885C4E009F8236 /* UIViewController+Navigation.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -181,6 +185,10 @@
 		DB220A7D26883C93009F8236 /* TimeZone+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+Extension.swift"; sourceTree = "<group>"; };
 		DB220A8026884334009F8236 /* RepoUserJSONParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUserJSONParserTests.swift; sourceTree = "<group>"; };
 		DB220A832688548E009F8236 /* GetReposWebAPIDataJSONParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposWebAPIDataJSONParserTests.swift; sourceTree = "<group>"; };
+		DB220A8726885A22009F8236 /* RepoUserDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUserDetailsVC.swift; sourceTree = "<group>"; };
+		DB220A8926885A36009F8236 /* RepoUserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUserDetailsView.swift; sourceTree = "<group>"; };
+		DB220A8B26885A56009F8236 /* RepoUserDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUserDetailsCoordinator.swift; sourceTree = "<group>"; };
+		DB220A8D26885C4E009F8236 /* UIViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Navigation.swift"; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -724,6 +732,16 @@
 			path = GetRepos;
 			sourceTree = "<group>";
 		};
+		DB220A85268859FE009F8236 /* RepoUserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				DB220A8726885A22009F8236 /* RepoUserDetailsVC.swift */,
+				DB220A8926885A36009F8236 /* RepoUserDetailsView.swift */,
+				DB220A8B26885A56009F8236 /* RepoUserDetailsCoordinator.swift */,
+			);
+			path = RepoUserDetails;
+			sourceTree = "<group>";
+		};
 		DBA7352B2686F62F00630516 = {
 			isa = PBXGroup;
 			children = (
@@ -825,6 +843,7 @@
 			children = (
 				DBA7355A2686F80E00630516 /* Launch */,
 				DB22099526870C30009F8236 /* ReposList */,
+				DB220A85268859FE009F8236 /* RepoUserDetails */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -891,6 +910,7 @@
 				DBA7356F2686FA2600630516 /* UIView+Extension.swift */,
 				DB2209C326870E67009F8236 /* UIColor+Extension.swift */,
 				DB220A1826876C56009F8236 /* UITableView+Extension.swift */,
+				DB220A8D26885C4E009F8236 /* UIViewController+Navigation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1048,6 +1068,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB220A8C26885A56009F8236 /* RepoUserDetailsCoordinator.swift in Sources */,
 				DBA735622686F8AF00630516 /* ScreenNavigationBarView.swift in Sources */,
 				DB2209C126870E3D009F8236 /* LanguageType.swift in Sources */,
 				DB2209A926870D8D009F8236 /* Appearance.swift in Sources */,
@@ -1089,6 +1110,7 @@
 				DB22099726870C43009F8236 /* ReposListVC.swift in Sources */,
 				DB2209DD268719F3009F8236 /* FirstScreenService.swift in Sources */,
 				DB2209D726870FF4009F8236 /* CurrentLanguageChangedNotifier.swift in Sources */,
+				DB220A8826885A22009F8236 /* RepoUserDetailsVC.swift in Sources */,
 				DB220A0426875D2D009F8236 /* WebAPIResult.swift in Sources */,
 				DB2209BF26870E3D009F8236 /* ThemesFactory.swift in Sources */,
 				DB2209CE26870F17009F8236 /* CurrentThemeChangedNotifier.swift in Sources */,
@@ -1104,7 +1126,9 @@
 				DB2209BE26870E3D009F8236 /* Theme.swift in Sources */,
 				DB2209FD26872496009F8236 /* RepoJSONParser.swift in Sources */,
 				DB22098826870A51009F8236 /* WebAPIFailure.swift in Sources */,
+				DB220A8E26885C4E009F8236 /* UIViewController+Navigation.swift in Sources */,
 				DB220A7E26883C93009F8236 /* TimeZone+Extension.swift in Sources */,
+				DB220A8A26885A36009F8236 /* RepoUserDetailsView.swift in Sources */,
 				DB2209FB268723A9009F8236 /* RepoUserJSONParser.swift in Sources */,
 				DB220A1526876C1A009F8236 /* ContainerTableCellConfigurator.swift in Sources */,
 				DB2209D026870F31009F8236 /* CurrentAppearanceChangedNotifier.swift in Sources */,

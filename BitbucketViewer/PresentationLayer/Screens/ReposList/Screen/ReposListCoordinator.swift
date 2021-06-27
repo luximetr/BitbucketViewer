@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReposListCoordinator {
+class ReposListCoordinator: ReposListVCOutput {
   
   // MARK: - Dependencies
   
@@ -29,6 +29,17 @@ class ReposListCoordinator {
     window.makeKeyAndVisible()
   }
   
+  func showRepoUserDetailsScreen(sourceVC: UIViewController, repoUser: RepoUser) {
+    let coordinator = RepoUserDetailsCoordinator(servicesFactory: servicesFactory)
+    coordinator.showRepoUserDetails(sourceVC: sourceVC, repoUser: repoUser)
+  }
+  
+  // MARK: - ReposListVCOutput
+  
+  func didTapOnRepo(in vc: UIViewController, repo: Repo) {
+    showRepoUserDetailsScreen(sourceVC: vc, repoUser: repo.owner)
+  }
+  
   // MARK: - Screens creating
   
   private func createReposListScreen() -> UIViewController {
@@ -40,6 +51,7 @@ class ReposListCoordinator {
       currentAppearanceService: servicesFactory.createAppearanceService(),
       getReposService: servicesFactory.createGetReposService()
     )
+    vc.output = self
     view.delegate = vc
     return vc
   }
