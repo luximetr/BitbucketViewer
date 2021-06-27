@@ -61,6 +61,15 @@ class ReposListVC: ScreenController, ReposListViewDelegate, OverScreenLoaderDisp
     selfView.backgroundColor = .blue
   }
   
+  // MARK: - View - Text values
+  
+  override func displayTextValues() {
+    super.displayTextValues()
+    let next = getLocalizedString(key: "repos_list.next_button.title")
+    print(next)
+    selfView.setNextButton(title: getLocalizedString(key: "repos_list.next_button.title"))
+  }
+  
   // MARK: - Repos - Display
   
   private func prepareReposListData() {

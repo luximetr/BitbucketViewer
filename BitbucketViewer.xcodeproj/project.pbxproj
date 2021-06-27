@@ -93,6 +93,9 @@
 		DB220A9C268871CE009F8236 /* ShowPopupAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A9B268871CE009F8236 /* ShowPopupAlertService.swift */; };
 		DB220A9E268871E4009F8236 /* ShowSystemAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A9D268871E4009F8236 /* ShowSystemAlertService.swift */; };
 		DB220AA0268871FB009F8236 /* ShowErrorAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A9F268871FB009F8236 /* ShowErrorAlertService.swift */; };
+		DB220AA62688759D009F8236 /* ReposList.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB220AA82688759D009F8236 /* ReposList.strings */; };
+		DB220AA9268875C4009F8236 /* ErrorAlert.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB220AAB268875C4009F8236 /* ErrorAlert.strings */; };
+		DB220AB1268877A1009F8236 /* RepoUserDetails.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB220AB3268877A1009F8236 /* RepoUserDetails.strings */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -205,6 +208,9 @@
 		DB220A9B268871CE009F8236 /* ShowPopupAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPopupAlertService.swift; sourceTree = "<group>"; };
 		DB220A9D268871E4009F8236 /* ShowSystemAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSystemAlertService.swift; sourceTree = "<group>"; };
 		DB220A9F268871FB009F8236 /* ShowErrorAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowErrorAlertService.swift; sourceTree = "<group>"; };
+		DB220AA72688759D009F8236 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ReposList.strings; sourceTree = "<group>"; };
+		DB220AAA268875C4009F8236 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ErrorAlert.strings; sourceTree = "<group>"; };
+		DB220AB2268877A1009F8236 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RepoUserDetails.strings; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -626,6 +632,7 @@
 		DB220A0E268767C3009F8236 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				DB220AA3268874F5009F8236 /* Strings */,
 				DB220A0F26876828009F8236 /* RepoItem */,
 			);
 			path = Helpers;
@@ -753,9 +760,8 @@
 		DB220A85268859FE009F8236 /* RepoUserDetails */ = {
 			isa = PBXGroup;
 			children = (
-				DB220A8726885A22009F8236 /* RepoUserDetailsVC.swift */,
-				DB220A8926885A36009F8236 /* RepoUserDetailsView.swift */,
-				DB220A8B26885A56009F8236 /* RepoUserDetailsCoordinator.swift */,
+				DB220AAC268875FD009F8236 /* Screen */,
+				DB220AAD26887601009F8236 /* Helpers */,
 			);
 			path = RepoUserDetails;
 			sourceTree = "<group>";
@@ -776,8 +782,43 @@
 				DB220A9D268871E4009F8236 /* ShowSystemAlertService.swift */,
 				DB220A9B268871CE009F8236 /* ShowPopupAlertService.swift */,
 				DB220A9F268871FB009F8236 /* ShowErrorAlertService.swift */,
+				DB220AAB268875C4009F8236 /* ErrorAlert.strings */,
 			);
 			path = Alerts;
+			sourceTree = "<group>";
+		};
+		DB220AA3268874F5009F8236 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				DB220AA82688759D009F8236 /* ReposList.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		DB220AAC268875FD009F8236 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				DB220A8726885A22009F8236 /* RepoUserDetailsVC.swift */,
+				DB220A8926885A36009F8236 /* RepoUserDetailsView.swift */,
+				DB220A8B26885A56009F8236 /* RepoUserDetailsCoordinator.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		DB220AAD26887601009F8236 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DB220AB026887612009F8236 /* Strings */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DB220AB026887612009F8236 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				DB220AB3268877A1009F8236 /* RepoUserDetails.strings */,
+			);
+			path = Strings;
 			sourceTree = "<group>";
 		};
 		DBA7352B2686F62F00630516 = {
@@ -1045,7 +1086,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */,
+				DB220AB1268877A1009F8236 /* RepoUserDetails.strings in Resources */,
 				DBA735412686F63100630516 /* Assets.xcassets in Resources */,
+				DB220AA62688759D009F8236 /* ReposList.strings in Resources */,
+				DB220AA9268875C4009F8236 /* ErrorAlert.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1212,6 +1256,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		DB220AA82688759D009F8236 /* ReposList.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB220AA72688759D009F8236 /* en */,
+			);
+			name = ReposList.strings;
+			sourceTree = "<group>";
+		};
+		DB220AAB268875C4009F8236 /* ErrorAlert.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB220AAA268875C4009F8236 /* en */,
+			);
+			name = ErrorAlert.strings;
+			sourceTree = "<group>";
+		};
+		DB220AB3268877A1009F8236 /* RepoUserDetails.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB220AB2268877A1009F8236 /* en */,
+			);
+			name = RepoUserDetails.strings;
+			sourceTree = "<group>";
+		};
 		DBA735422686F63100630516 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

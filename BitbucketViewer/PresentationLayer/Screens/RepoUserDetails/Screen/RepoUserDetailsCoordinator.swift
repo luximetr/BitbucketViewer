@@ -48,6 +48,7 @@ class RepoUserDetailsCoordinator: RepoUserDetailsVCOutput {
       repoUser: repoUser,
       currentAppearanceService: servicesFactory.createAppearanceService()
     )
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "RepoUserDetails")
     vc.output = self
     view.delegate = vc
     return vc

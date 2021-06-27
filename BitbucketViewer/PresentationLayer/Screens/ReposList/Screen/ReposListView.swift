@@ -56,6 +56,10 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
     nextButton.isHidden = hidden
   }
   
+  func setNextButton(title: String) {
+    nextButton.title = title
+  }
+  
   // MARK: - Setup
   
   override func setup() {
@@ -142,7 +146,6 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
   // MARK: - Setup nextButton
   
   private func setupNextButton() {
-    nextButton.title = "Next"
     nextButton.addAction(self, action: #selector(didTapOnNextButton))
   }
   

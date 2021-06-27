@@ -55,10 +55,34 @@ class RepoUserDetailsVC: ScreenController, RepoUserDetailsViewDelegate {
   
   private func displayDetails() {
     selfView.displayAvatar(repoUser.avatar)
-    selfView.displayName("Display name: \(repoUser.name ?? "")")
-    selfView.displayWebsite("Website: \(repoUser.website?.absoluteString ?? "")")
-    selfView.displayType("Type: \(repoUser.type ?? "")")
-    selfView.displayNickname("Nickname: \(repoUser.nickname ?? "")")
+    displayDisplayName()
+    displayWebsite()
+    displayType()
+    displayNickname()
+  }
+  
+  private func displayDisplayName() {
+    let title = getLocalizedString(key: "repo_user_details.display_name.title")
+    let fullString = "\(title): \(repoUser.name ?? "")"
+    selfView.displayName(fullString)
+  }
+  
+  private func displayWebsite() {
+    let title = getLocalizedString(key: "repo_user_details.website.title")
+    let fullString = "\(title): \(repoUser.website?.absoluteString ?? "")"
+    selfView.displayWebsite(fullString)
+  }
+  
+  private func displayType() {
+    let title = getLocalizedString(key: "repo_user_details.type.title")
+    let fullString = "\(title): \(repoUser.type ?? "")"
+    selfView.displayType(fullString)
+  }
+  
+  private func displayNickname() {
+    let title = getLocalizedString(key: "repo_user_details.nickname.title")
+    let fullString = "\(title): \(repoUser.nickname ?? "")"
+    selfView.displayNickname(fullString)
   }
   
   // MARK: - RepoUserDetailsViewDelegate

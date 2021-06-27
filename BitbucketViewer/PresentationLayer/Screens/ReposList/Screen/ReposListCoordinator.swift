@@ -53,6 +53,7 @@ class ReposListCoordinator: ReposListVCOutput {
       getReposService: servicesFactory.createGetReposService(),
       showErrorAlertService: servicesFactory.createShowErrorAlertService()
     )
+    vc.stringsLocalizeService = servicesFactory.createStringsLocalizeService(tableName: "ReposList")
     vc.output = self
     view.delegate = vc
     return vc

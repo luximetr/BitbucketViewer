@@ -10,5 +10,4 @@ import Foundation
 
 enum ISO639_1Code: String {
   case en = "en"
-  case ru = "ru"
 }
