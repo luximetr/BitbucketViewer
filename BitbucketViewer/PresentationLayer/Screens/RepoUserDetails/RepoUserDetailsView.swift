@@ -9,6 +9,7 @@ import UIKit
 
 protocol RepoUserDetailsViewDelegate: AnyObject {
   func didTapOnBack()
+  func didTapOnWebsite()
 }
 
 class RepoUserDetailsView: ScreenNavigationBarView, AppearanceConfigurable {
@@ -181,13 +182,18 @@ class RepoUserDetailsView: ScreenNavigationBarView, AppearanceConfigurable {
   // MARK: - Setup websiteButton
   
   private func setupWebsiteButton() {
-    
+    websiteButton.addAction(self, action: #selector(didTapOnWebsiteButton))
   }
   
   private func autoLayoutWebsiteButton() {
     websiteButton.snp.makeConstraints { make in
       make.edges.equalTo(websiteLabel)
     }
+  }
+  
+  @objc
+  private func didTapOnWebsiteButton() {
+    delegate?.didTapOnWebsite()
   }
   
   // MARK: - Setup typeLabel

@@ -9,6 +9,7 @@ import UIKit
 
 protocol RepoUserDetailsVCOutput {
   func didTapOnBack(in vc: UIViewController)
+  func didTapOnRepoUserWebsite(in vc: UIViewController, website: URL)
 }
 
 class RepoUserDetailsVC: ScreenController, RepoUserDetailsViewDelegate {
@@ -64,5 +65,10 @@ class RepoUserDetailsVC: ScreenController, RepoUserDetailsViewDelegate {
   
   func didTapOnBack() {
     output.didTapOnBack(in: self)
+  }
+  
+  func didTapOnWebsite() {
+    guard let website = repoUser.website else { return }
+    output.didTapOnRepoUserWebsite(in: self, website: website)
   }
 }

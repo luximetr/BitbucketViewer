@@ -32,6 +32,11 @@ class RepoUserDetailsCoordinator: RepoUserDetailsVCOutput {
     vc.closeScreen(animation: .pop)
   }
   
+  func didTapOnRepoUserWebsite(in vc: UIViewController, website: URL) {
+    let coordinator = RepoUserWebsiteCoordinator(servicesFactory: servicesFactory)
+    coordinator.showRepoUserWebsite(sourceVC: vc, website: website)
+  }
+  
   // MARK: - Create screen
   
   private func createRepoUserDetailsVC(repoUser: RepoUser) -> UIViewController {
