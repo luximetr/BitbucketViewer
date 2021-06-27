@@ -44,7 +44,8 @@ class ReposListCoordinator: ReposListVCOutput {
   
   private func createReposListScreen() -> UIViewController {
     let view = ReposListView(
-      imageSetService: servicesFactory.createImageSetFromURLService()
+      imageSetService: servicesFactory.createImageSetFromURLService(),
+      appearanceService: servicesFactory.createAppearanceService()
     )
     let vc = ReposListVC(
       view: view,

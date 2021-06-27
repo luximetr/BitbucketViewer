@@ -55,6 +55,7 @@ class RepoItemView: InitView, AppearanceConfigurable {
   override func setAppearance(_ appearance: Appearance) {
     super.setAppearance(appearance)
     setSelf(appearance: appearance)
+    setAvatarImageView(appearance: appearance)
     setDisplayNameLabel(appearance: appearance)
     setTypeLabel(appearance: appearance)
     setCreatedOnLabel(appearance: appearance)
@@ -73,13 +74,17 @@ class RepoItemView: InitView, AppearanceConfigurable {
     avatarImageView.layer.masksToBounds = true
   }
   
+  private func setAvatarImageView(appearance: Appearance) {
+    avatarImageView.backgroundColor = appearance.background.secondary
+  }
+  
   private func autoLayoutAvatarImageView() {
-    let side: CGFloat = 50
+    let side: CGFloat = 70
     avatarImageView.snp.makeConstraints { make in
       make.leading.equalToSuperview().offset(24)
-      make.top.equalToSuperview().offset(10)
+      make.top.equalToSuperview().offset(15)
       make.width.height.equalTo(side)
-      make.bottom.equalToSuperview().inset(10)
+      make.bottom.equalToSuperview().inset(15)
     }
     avatarImageView.layer.cornerRadius = side / 2
   }

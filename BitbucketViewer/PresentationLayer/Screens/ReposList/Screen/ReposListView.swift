@@ -23,6 +23,7 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
   
   weak var delegate: ReposListViewDelegate?
   private let imageSetService: ImageSetFromURLService
+  private let appearanceService: AppearanceService
   private var createdOnFormatter = DateFormatter()
   
   // MARK: - Controllers
@@ -31,8 +32,11 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
   
   // MARK: - Life cycle
   
-  init(imageSetService: ImageSetFromURLService) {
+  init(imageSetService: ImageSetFromURLService,
+       appearanceService: AppearanceService
+  ) {
     self.imageSetService = imageSetService
+    self.appearanceService = appearanceService
     createdOnFormatter.dateFormat = "dd MMM yyyy"
     super.init(frame: .zero)
   }
@@ -88,6 +92,7 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
   private func setupTableView() {
     tableView.allowsSelection = false
     tableView.separatorStyle = .none
+    tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
   }
   
   private func setTableViewAppearance(appearance: Appearance) {
@@ -122,6 +127,7 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
       createdOn: createCreatedOnString(from: repo.createdOn)
     )
     cell.imageSetService = imageSetService
+    cell.appearanceService = appearanceService
     cell.tapAction = { [weak self] in
       self?.delegate?.didSelectRepo(repo)
     }
