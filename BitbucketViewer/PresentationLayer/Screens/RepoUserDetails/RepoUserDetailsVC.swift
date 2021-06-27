@@ -13,12 +13,18 @@ class RepoUserDetailsVC: ScreenController {
   
   private let selfView: RepoUserDetailsView
   
+  // MARK: - Data
+  
+  private let repoUser: RepoUser
+  
   // MARK: - Life cycle
   
   init(view: RepoUserDetailsView,
+       repoUser: RepoUser,
        currentAppearanceService: AppearanceService
   ) {
     selfView = view
+    self.repoUser = repoUser
     super.init(
       screenView: view,
       currentAppearanceService: currentAppearanceService
@@ -33,11 +39,16 @@ class RepoUserDetailsVC: ScreenController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    setup()
+    displayDetails()
   }
   
-  // MARK: - View - Setup
+  // MARK: - Repo user - Display
   
-  private func setup() {
+  private func displayDetails() {
+    selfView.displayAvatar(repoUser.avatar)
+    selfView.displayName("Display name: \(repoUser.name ?? "")")
+    selfView.displayWebsite("Website: \(repoUser.website?.absoluteString ?? "")")
+    selfView.displayType("Type: \(repoUser.type ?? "")")
+    selfView.displayNickname("Nickname: \(repoUser.nickname ?? "")")
   }
 }

@@ -91,7 +91,7 @@ class ReposListVC: ScreenController, ReposListViewDelegate {
   // MARK: - ReposListViewDelegate
   
   func didSelectRepo(_ repo: Repo) {
-    print(repo.displayName)
+    output.didTapOnRepo(in: self, repo: repo)
   }
   
   func didTapOnNextButton() {

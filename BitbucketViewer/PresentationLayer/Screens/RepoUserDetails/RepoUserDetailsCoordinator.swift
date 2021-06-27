@@ -22,16 +22,19 @@ class RepoUserDetailsCoordinator {
   // MARK: - Routing
   
   func showRepoUserDetails(sourceVC: UIViewController, repoUser: RepoUser) {
-    let vc = createRepoUserDetailsVC()
+    let vc = createRepoUserDetailsVC(repoUser: repoUser)
     sourceVC.showScreen(vc, animation: .push)
   }
   
   // MARK: - Create screen
   
-  private func createRepoUserDetailsVC() -> UIViewController {
-    let view = RepoUserDetailsView()
+  private func createRepoUserDetailsVC(repoUser: RepoUser) -> UIViewController {
+    let view = RepoUserDetailsView(
+      imageSetService: servicesFactory.createImageSetFromURLService()
+    )
     let vc = RepoUserDetailsVC(
       view: view,
+      repoUser: repoUser,
       currentAppearanceService: servicesFactory.createAppearanceService()
     )
     return vc
