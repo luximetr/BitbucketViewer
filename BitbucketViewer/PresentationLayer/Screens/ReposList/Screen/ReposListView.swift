@@ -7,14 +7,21 @@
 
 import UIKit
 
+protocol ReposListViewDelegate: AnyObject {
+  func didSelectRepo(_ repo: Repo)
+  func didTapOnNextButton()
+}
+
 class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
   
   // MARK: - UI elements
   
   private let tableView = UITableView()
+  private let nextButton = UIButton()
   
   // MARK: - Dependencies
   
+  weak var delegate: ReposListViewDelegate?
   private let imageSetService: ImageSetFromURLService
   private var createdOnFormatter = DateFormatter()
   
@@ -43,14 +50,19 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
     super.setup()
     setupTableView()
     setupTableViewController()
+    setupNextButton()
   }
   
   // MARK: - AutoLayout
   
   override func autoLayout() {
     super.autoLayout()
-    addSubview(tableView)
+    addSubviews([
+      tableView,
+      nextButton
+    ])
     autoLayoutTableView()
+    autoLayoutNextButton()
   }
   
   // MARK: - Appearance
@@ -58,6 +70,7 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
   override func setAppearance(_ appearance: Appearance) {
     super.setAppearance(appearance)
     setTableViewAppearance(appearance: appearance)
+    setNextButton(appearance: appearance)
   }
   
   // MARK: - Setup tableView
@@ -99,8 +112,8 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
       createdOn: createCreatedOnString(from: repo.createdOn)
     )
     cell.imageSetService = imageSetService
-    cell.tapAction = {
-      print("Did select \(String(describing: repo.displayName))")
+    cell.tapAction = { [weak self] in
+      self?.delegate?.didSelectRepo(repo)
     }
     return cell
   }
@@ -108,5 +121,31 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
   private func createCreatedOnString(from date: Date?) -> String {
     guard let date = date else { return "" }
     return createdOnFormatter.string(from: date)
+  }
+  
+  // MARK: - Setup nextButton
+  
+  private func setupNextButton() {
+    nextButton.title = "Next"
+    nextButton.addAction(self, action: #selector(didTapOnNextButton))
+  }
+  
+  private func setNextButton(appearance: Appearance) {
+    nextButton.titleColor = appearance.action.primary.title
+    nextButton.backgroundColor = appearance.action.primary.background
+  }
+  
+  private func autoLayoutNextButton() {
+    nextButton.snp.makeConstraints { make in
+      make.height.equalTo(44)
+      make.width.equalTo(100)
+      make.trailing.equalToSuperview().inset(24)
+      make.bottom.equalTo(safeArea.bottom).inset(10)
+    }
+  }
+  
+  @objc
+  private func didTapOnNextButton() {
+    delegate?.didTapOnNextButton()
   }
 }

@@ -40,6 +40,7 @@ class ReposListCoordinator {
       currentAppearanceService: servicesFactory.createAppearanceService(),
       getReposService: servicesFactory.createGetReposService()
     )
+    view.delegate = vc
     return vc
   }
 }

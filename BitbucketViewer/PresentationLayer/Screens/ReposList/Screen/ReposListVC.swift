@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReposListVC: ScreenController {
+class ReposListVC: ScreenController, ReposListViewDelegate {
   
   // MARK: - UI elements
   
@@ -65,5 +65,15 @@ class ReposListVC: ScreenController {
         }
       }
     })
+  }
+  
+  // MARK: - ReposListViewDelegate
+  
+  func didSelectRepo(_ repo: Repo) {
+    print(repo.displayName)
+  }
+  
+  func didTapOnNextButton() {
+    print("load next page")
   }
 }
