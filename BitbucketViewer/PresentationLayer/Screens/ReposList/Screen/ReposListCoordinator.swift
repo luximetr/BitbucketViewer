@@ -50,7 +50,8 @@ class ReposListCoordinator: ReposListVCOutput {
     let vc = ReposListVC(
       view: view,
       currentAppearanceService: servicesFactory.createAppearanceService(),
-      getReposService: servicesFactory.createGetReposService()
+      getReposService: servicesFactory.createGetReposService(),
+      showErrorAlertService: servicesFactory.createShowErrorAlertService()
     )
     vc.output = self
     view.delegate = vc

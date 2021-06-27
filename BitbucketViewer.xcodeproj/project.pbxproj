@@ -90,6 +90,9 @@
 		DB220A9526886890009F8236 /* RepoUserWebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A9426886890009F8236 /* RepoUserWebsiteView.swift */; };
 		DB220A97268868C1009F8236 /* RepoUserWebsiteCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A96268868C1009F8236 /* RepoUserWebsiteCoordinator.swift */; };
 		DB220A99268870F1009F8236 /* OverScreenLoaderDisplayable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A98268870F1009F8236 /* OverScreenLoaderDisplayable.swift */; };
+		DB220A9C268871CE009F8236 /* ShowPopupAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A9B268871CE009F8236 /* ShowPopupAlertService.swift */; };
+		DB220A9E268871E4009F8236 /* ShowSystemAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A9D268871E4009F8236 /* ShowSystemAlertService.swift */; };
+		DB220AA0268871FB009F8236 /* ShowErrorAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A9F268871FB009F8236 /* ShowErrorAlertService.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -199,6 +202,9 @@
 		DB220A9426886890009F8236 /* RepoUserWebsiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUserWebsiteView.swift; sourceTree = "<group>"; };
 		DB220A96268868C1009F8236 /* RepoUserWebsiteCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUserWebsiteCoordinator.swift; sourceTree = "<group>"; };
 		DB220A98268870F1009F8236 /* OverScreenLoaderDisplayable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverScreenLoaderDisplayable.swift; sourceTree = "<group>"; };
+		DB220A9B268871CE009F8236 /* ShowPopupAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPopupAlertService.swift; sourceTree = "<group>"; };
+		DB220A9D268871E4009F8236 /* ShowSystemAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSystemAlertService.swift; sourceTree = "<group>"; };
+		DB220A9F268871FB009F8236 /* ShowErrorAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowErrorAlertService.swift; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -466,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				DB2209DB268719EB009F8236 /* Start */,
+				DB220A9A268871C2009F8236 /* Alerts */,
 				DB2209D82687103A009F8236 /* Localization */,
 				DB2209D326870FD7009F8236 /* Languages */,
 				DB2209C626870EBF009F8236 /* Themes */,
@@ -761,6 +768,16 @@
 				DB220A96268868C1009F8236 /* RepoUserWebsiteCoordinator.swift */,
 			);
 			path = RepoUserWebsite;
+			sourceTree = "<group>";
+		};
+		DB220A9A268871C2009F8236 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				DB220A9D268871E4009F8236 /* ShowSystemAlertService.swift */,
+				DB220A9B268871CE009F8236 /* ShowPopupAlertService.swift */,
+				DB220A9F268871FB009F8236 /* ShowErrorAlertService.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 		DBA7352B2686F62F00630516 = {
@@ -1132,12 +1149,14 @@
 				DB2209F926872359009F8236 /* RepoUser.swift in Sources */,
 				DB220A9526886890009F8236 /* RepoUserWebsiteView.swift in Sources */,
 				DB22098626870A51009F8236 /* ServiceError.swift in Sources */,
+				DB220A9E268871E4009F8236 /* ShowSystemAlertService.swift in Sources */,
 				DB2209E126871A24009F8236 /* ServicesFactory.swift in Sources */,
 				DB22098E26870A51009F8236 /* WebAPIResponseErrorJSONConvertor.swift in Sources */,
 				DB22099726870C43009F8236 /* ReposListVC.swift in Sources */,
 				DB2209DD268719F3009F8236 /* FirstScreenService.swift in Sources */,
 				DB220A97268868C1009F8236 /* RepoUserWebsiteCoordinator.swift in Sources */,
 				DB2209D726870FF4009F8236 /* CurrentLanguageChangedNotifier.swift in Sources */,
+				DB220AA0268871FB009F8236 /* ShowErrorAlertService.swift in Sources */,
 				DB220A8826885A22009F8236 /* RepoUserDetailsVC.swift in Sources */,
 				DB220A0426875D2D009F8236 /* WebAPIResult.swift in Sources */,
 				DB2209BF26870E3D009F8236 /* ThemesFactory.swift in Sources */,
@@ -1159,6 +1178,7 @@
 				DB220A8A26885A36009F8236 /* RepoUserDetailsView.swift in Sources */,
 				DB2209FB268723A9009F8236 /* RepoUserJSONParser.swift in Sources */,
 				DB220A1526876C1A009F8236 /* ContainerTableCellConfigurator.swift in Sources */,
+				DB220A9C268871CE009F8236 /* ShowPopupAlertService.swift in Sources */,
 				DB2209D026870F31009F8236 /* CurrentAppearanceChangedNotifier.swift in Sources */,
 				DB220A202688268D009F8236 /* GetReposWebAPIData.swift in Sources */,
 				DB22099426870A8D009F8236 /* WebAPIWorkersFactory.swift in Sources */,

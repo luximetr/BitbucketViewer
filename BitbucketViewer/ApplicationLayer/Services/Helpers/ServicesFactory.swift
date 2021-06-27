@@ -77,6 +77,27 @@ class ServicesFactory {
     return ProgressHUDAppearanceService()
   }
   
+  // MARK: - Languages
+  
+  func createLanguagesService() -> LanguagesService {
+    let key = "languagesService"
+    if let service = referenceStorage.getObject(key) as? LanguagesService {
+      return service
+    } else {
+      let service = LanguagesService(
+        currentLanguageChangedNotifier: notifiersFactory.createCurrentLanguageChangedNotifier()
+      )
+      referenceStorage.storeObject(key, object: service)
+      return service
+    }
+  }
+  
+  func createStringsLocalizeService(tableName: String = "") -> StringsLocalizeService {
+    return StringsLocalizeService(
+      languagesService: createLanguagesService(),
+      tableName: tableName)
+  }
+  
   // MARK: - Files
   
   func createImageSetFromURLService() -> ImageSetFromURLService {
@@ -89,5 +110,12 @@ class ServicesFactory {
     return GetReposService(
       getReposWebAPIWorker: webAPIWorkersFactory.createGetReposWebAPIWorker()
     )
+  }
+  
+  // MARK: - Alerts
+  
+  func createShowErrorAlertService() -> ShowErrorAlertService {
+    return ShowErrorAlertService(
+      stringsLocalizeService: createStringsLocalizeService(tableName: "ErrorAlert"))
   }
 }

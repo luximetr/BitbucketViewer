@@ -44,4 +44,17 @@ class NotifiersFactory {
       return notifier
     }
   }
+  
+  // MARK: - Language
+  
+  func createCurrentLanguageChangedNotifier() -> CurrentLanguageChangedNotifier {
+    let key = "currentLanguageChangedNotifier"
+    if let notifier = referenceStorage.getObject(key) as? CurrentLanguageChangedNotifier {
+      return notifier
+    } else {
+      let notifier = CurrentLanguageChangedNotifier()
+      referenceStorage.storeObject(key, object: notifier)
+      return notifier
+    }
+  }
 }

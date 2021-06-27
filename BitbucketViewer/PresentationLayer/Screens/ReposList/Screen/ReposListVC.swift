@@ -21,6 +21,7 @@ class ReposListVC: ScreenController, ReposListViewDelegate, OverScreenLoaderDisp
   
   var output: ReposListVCOutput!
   private let getReposService: GetReposService
+  private let showErrorAlertService: ShowErrorAlertService
   
   // MARK: - Data
   
@@ -30,10 +31,12 @@ class ReposListVC: ScreenController, ReposListViewDelegate, OverScreenLoaderDisp
   
   init(view: ReposListView,
        currentAppearanceService: AppearanceService,
-       getReposService: GetReposService
+       getReposService: GetReposService,
+       showErrorAlertService: ShowErrorAlertService
   ) {
     selfView = view
     self.getReposService = getReposService
+    self.showErrorAlertService = showErrorAlertService
     super.init(
       screenView: view,
       currentAppearanceService: currentAppearanceService
