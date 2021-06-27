@@ -25,6 +25,16 @@ class RepoJSONParserTests: XCTestCase {
   private var repoUserTestAvatarURLString = "https://images.com/cat"
   private var repoUserTestAvatarURL = URL(string: "https://images.com/cat")
   
+  // MARK: - JSON keys
+  
+  struct JSONKey {
+    static var repoUUID = "uuid"
+    static var repoName = "name"
+    static var repoType = "type"
+    static var repoCreatedOn = "created_on"
+    static var repoOwner = "owner"
+  }
+  
   // MARK: - Tests
   
   func testEmptyJSONParsing() {
@@ -33,20 +43,7 @@ class RepoJSONParserTests: XCTestCase {
   }
   
   func testFullRepoParsing() {
-    let testJSON: JSON = [
-      "uuid": repoTestId,
-      "name": repoTestDisplayName,
-      "type": repoTestType,
-      "created_on": repoTestCreatedOnString,
-      "owner": [
-        "uuid": repoUserTestId,
-        "links": [
-          "avatar": [
-            "href": repoUserTestAvatarURLString
-          ]
-        ]
-      ]
-    ]
+    let testJSON = createTestFullRepoJSON()
     
     let expectedResult = Repo(
       id: repoTestId,
@@ -61,6 +58,98 @@ class RepoJSONParserTests: XCTestCase {
     
     let actualResult = repoJSONParser.parseRepo(from: testJSON)
     XCTAssertEqual(expectedResult, actualResult)
+  }
+  
+  func testEmptyIdRepoParsing() {
+    var testJSON = createTestFullRepoJSON()
+    testJSON.removeValue(forKey: JSONKey.repoUUID)
+    
+    let expectedResult: Repo? = nil
+    
+    let actualResult = repoJSONParser.parseRepo(from: testJSON)
+    XCTAssertEqual(expectedResult, actualResult)
+  }
+  
+  func testNonNilRepoWithEmptyNameParsing() {
+    var testJSON = createTestFullRepoJSON()
+    testJSON.removeValue(forKey: JSONKey.repoName)
+    
+    let parsedRepo = repoJSONParser.parseRepo(from: testJSON)
+    
+    XCTAssertNotNil(parsedRepo)
+  }
+  
+  func testEmptyNameRepoParsing() {
+    var testJSON = createTestFullRepoJSON()
+    testJSON.removeValue(forKey: JSONKey.repoName)
+    
+    let parsedRepo = repoJSONParser.parseRepo(from: testJSON)
+    
+    XCTAssertNil(parsedRepo?.displayName)
+  }
+  
+  func testNonNilRepoWithEmptyTypeParsing() {
+    var testJSON = createTestFullRepoJSON()
+    testJSON.removeValue(forKey: JSONKey.repoType)
+    
+    let parsedRepo = repoJSONParser.parseRepo(from: testJSON)
+    
+    XCTAssertNotNil(parsedRepo)
+  }
+  
+  func testRepoEmptyTypeParsing() {
+    var testJSON = createTestFullRepoJSON()
+    testJSON.removeValue(forKey: JSONKey.repoType)
+    
+    let parsedRepo = repoJSONParser.parseRepo(from: testJSON)
+    
+    XCTAssertNil(parsedRepo?.type)
+  }
+  
+  func testNonNulRepoWithEmptyCreatedOnParsing() {
+    var testJSON = createTestFullRepoJSON()
+    testJSON.removeValue(forKey: JSONKey.repoCreatedOn)
+    
+    let parsedRepo = repoJSONParser.parseRepo(from: testJSON)
+    
+    XCTAssertNotNil(parsedRepo)
+  }
+  
+  func testRepoEmptyCreatedOnParsing() {
+    var testJSON = createTestFullRepoJSON()
+    testJSON.removeValue(forKey: JSONKey.repoCreatedOn)
+    
+    let parsedRepo = repoJSONParser.parseRepo(from: testJSON)
+    
+    XCTAssertNil(parsedRepo?.createdOn)
+  }
+  
+  func testRepoEmptyOwnerParsing() {
+    var testJSON = createTestFullRepoJSON()
+    testJSON.removeValue(forKey: JSONKey.repoOwner)
+    
+    let parsedRepo = repoJSONParser.parseRepo(from: testJSON)
+    
+    XCTAssertNil(parsedRepo?.createdOn)
+  }
+  
+  // MARK: - Create test data
+  
+  private func createTestFullRepoJSON() -> JSON {
+    return [
+      JSONKey.repoUUID: repoTestId,
+      JSONKey.repoName: repoTestDisplayName,
+      JSONKey.repoType: repoTestType,
+      JSONKey.repoCreatedOn: repoTestCreatedOnString,
+      JSONKey.repoOwner: [
+        "uuid": repoUserTestId,
+        "links": [
+          "avatar": [
+            "href": repoUserTestAvatarURLString
+          ]
+        ]
+      ]
+    ]
   }
   
 }
