@@ -80,6 +80,7 @@
 		DB220A7A26883266009F8236 /* RepoJSONParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A7926883266009F8236 /* RepoJSONParserTests.swift */; };
 		DB220A7C268837DC009F8236 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A7B268837DC009F8236 /* Date+Extension.swift */; };
 		DB220A7E26883C93009F8236 /* TimeZone+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A7D26883C93009F8236 /* TimeZone+Extension.swift */; };
+		DB220A8126884334009F8236 /* RepoUserJSONParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A8026884334009F8236 /* RepoUserJSONParserTests.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -179,6 +180,7 @@
 		DB220A7926883266009F8236 /* RepoJSONParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoJSONParserTests.swift; sourceTree = "<group>"; };
 		DB220A7B268837DC009F8236 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		DB220A7D26883C93009F8236 /* TimeZone+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeZone+Extension.swift"; sourceTree = "<group>"; };
+		DB220A8026884334009F8236 /* RepoUserJSONParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoUserJSONParserTests.swift; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -693,6 +695,7 @@
 			isa = PBXGroup;
 			children = (
 				DB220A7826883253009F8236 /* Repo */,
+				DB220A7F2688431C009F8236 /* RepoUser */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -703,6 +706,14 @@
 				DB220A7926883266009F8236 /* RepoJSONParserTests.swift */,
 			);
 			path = Repo;
+			sourceTree = "<group>";
+		};
+		DB220A7F2688431C009F8236 /* RepoUser */ = {
+			isa = PBXGroup;
+			children = (
+				DB220A8026884334009F8236 /* RepoUserJSONParserTests.swift */,
+			);
+			path = RepoUser;
 			sourceTree = "<group>";
 		};
 		DBA7352B2686F62F00630516 = {
@@ -1019,6 +1030,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB220A8126884334009F8236 /* RepoUserJSONParserTests.swift in Sources */,
 				DB220A7A26883266009F8236 /* RepoJSONParserTests.swift in Sources */,
 				DB220A6B268830ED009F8236 /* BitbucketViewerTests.swift in Sources */,
 			);
