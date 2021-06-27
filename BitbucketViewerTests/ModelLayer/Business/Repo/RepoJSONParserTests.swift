@@ -52,7 +52,11 @@ class RepoJSONParserTests: XCTestCase {
       createdOn: repoTestCreatedOn,
       owner: RepoUser(
         id: repoUserTestId,
-        avatar: repoUserTestAvatarURL
+        name: nil,
+        avatar: repoUserTestAvatarURL,
+        website: nil,
+        type: nil,
+        nickname: nil
       )
     )
     

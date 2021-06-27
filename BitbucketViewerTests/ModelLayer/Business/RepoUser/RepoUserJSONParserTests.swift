@@ -16,15 +16,24 @@ class RepoUserJSONParserTests: XCTestCase {
   
   // MARK: - Test data
   
-  private var testUUID = "test uuid"
-  private var testAvatarURLString = "https://images.com/cat"
-  private var testAvatarURL = URL(string: "https://images.com/cat")
+  private let testUUID = "test uuid"
+  private let testAvatarURLString = "https://images.com/cat"
+  private let testAvatarURL = URL(string: "https://images.com/cat")
+  private let testDisplayName = "test display name"
+  private let testWebsiteURLString = "https://website.com/user"
+  private let testWebsiteURL = URL(string: "https://website.com/user")
+  private let testType = "test type"
+  private let testNickname = "test nickname"
   
   // MARK: - JSON keys
   
   struct JSONKey {
     static var uuid = "uuid"
     static var links = "links"
+    static var displayName = "display_name"
+    static var html = "html"
+    static var type = "type"
+    static var nickname = "nickname"
   }
   
   // MARK: - Tests
@@ -39,7 +48,11 @@ class RepoUserJSONParserTests: XCTestCase {
     
     let expectedResult = RepoUser(
       id: testUUID,
-      avatar: testAvatarURL
+      name: testDisplayName,
+      avatar: testAvatarURL,
+      website: testWebsiteURL,
+      type: testType,
+      nickname: testNickname
     )
     
     let actualResult = repoUserJSONParser.parseRepoUser(from: testJSON)
@@ -74,6 +87,60 @@ class RepoUserJSONParserTests: XCTestCase {
     XCTAssertNil(parsedUser?.avatar)
   }
   
+  func testNonNilRepoUserWithEmptyDisplayNameParsing() {
+    var testJSON = createTestFullRepoUserJSON()
+    testJSON.removeValue(forKey: JSONKey.displayName)
+    
+    let parsedUser = repoUserJSONParser.parseRepoUser(from: testJSON)
+    
+    XCTAssertNotNil(parsedUser)
+  }
+  
+  func testEmptyDisplayNameRepoUserParsing() {
+    var testJSON = createTestFullRepoUserJSON()
+    testJSON.removeValue(forKey: JSONKey.displayName)
+    
+    let parsedUser = repoUserJSONParser.parseRepoUser(from: testJSON)
+    
+    XCTAssertNil(parsedUser?.name)
+  }
+  
+  func testNonNilRepoUserWithEmptyTypeParsing() {
+    var testJSON = createTestFullRepoUserJSON()
+    testJSON.removeValue(forKey: JSONKey.type)
+    
+    let parsedUser = repoUserJSONParser.parseRepoUser(from: testJSON)
+    
+    XCTAssertNotNil(parsedUser)
+  }
+  
+  func testEmptyTypeRepoUserParsing() {
+    var testJSON = createTestFullRepoUserJSON()
+    testJSON.removeValue(forKey: JSONKey.type)
+    
+    let parsedUser = repoUserJSONParser.parseRepoUser(from: testJSON)
+    
+    XCTAssertNil(parsedUser?.type)
+  }
+  
+  func testNonNilRepoUserEmptyNicknameParsing() {
+    var testJSON = createTestFullRepoUserJSON()
+    testJSON.removeValue(forKey: JSONKey.nickname)
+    
+    let parsedUser = repoUserJSONParser.parseRepoUser(from: testJSON)
+    
+    XCTAssertNotNil(parsedUser)
+  }
+  
+  func testEmptyNicknameRepoUserParsing() {
+    var testJSON = createTestFullRepoUserJSON()
+    testJSON.removeValue(forKey: JSONKey.nickname)
+    
+    let parsedUser = repoUserJSONParser.parseRepoUser(from: testJSON)
+    
+    XCTAssertNil(parsedUser?.nickname)
+  }
+  
   // MARK: - Create test data
   
   private func createTestFullRepoUserJSON() -> JSON {
@@ -82,8 +149,14 @@ class RepoUserJSONParserTests: XCTestCase {
       JSONKey.links: [
         "avatar": [
           "href": testAvatarURLString
+        ],
+        "html": [
+          "href": testWebsiteURLString
         ]
-      ]
+      ],
+      JSONKey.displayName: testDisplayName,
+      JSONKey.type: testType,
+      JSONKey.nickname: testNickname
     ]
   }
   
