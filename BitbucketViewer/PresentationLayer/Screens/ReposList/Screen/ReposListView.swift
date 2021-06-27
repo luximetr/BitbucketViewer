@@ -37,11 +37,19 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
     super.init(frame: .zero)
   }
   
+  // MARK: - Public
+  
   // MARK: - List - Display
   
   func displayReposList(_ repos: [Repo]) {
     let cells = createReposCells(repos)
     tableViewController.reloadItems(cells, animated: false)
+  }
+  
+  // MARK: - Next button - display
+  
+  func setNextButton(hidden: Bool) {
+    nextButton.isHidden = hidden
   }
   
   // MARK: - Setup
@@ -72,6 +80,8 @@ class ReposListView: ScreenNavigationBarView, AppearanceConfigurable {
     setTableViewAppearance(appearance: appearance)
     setNextButton(appearance: appearance)
   }
+  
+  // MARK: - Private
   
   // MARK: - Setup tableView
   

@@ -17,6 +17,10 @@ class ReposListVC: ScreenController, ReposListViewDelegate {
   
   private let getReposService: GetReposService
   
+  // MARK: - Data
+  
+  private var nextPageDate: Date?
+  
   // MARK: - Life cycle
   
   init(view: ReposListView,
@@ -56,15 +60,27 @@ class ReposListVC: ScreenController, ReposListViewDelegate {
   }
   
   private func loadReposList() {
-    getReposService.getRepos(completion: { [weak self] result in
-      DispatchQueue.main.async {
-        switch result {
-          case .success(let repos):
-            self?.selfView.displayReposList(repos)
-          case .failure(let error): print(error)
+    getReposService.getRepos(
+      nextPageDate: nextPageDate,
+      completion: { [weak self] result in
+        DispatchQueue.main.async {
+          switch result {
+            case .success(let data):
+              self?.displayReposListData(data)
+            case .failure(let error):
+              print(error)
+          }
         }
       }
-    })
+    )
+  }
+  
+  // MARK: - Repos list - Display data
+  
+  private func displayReposListData(_ data: GetReposService.Data) {
+    nextPageDate = data.nextPageDate
+    selfView.setNextButton(hidden: nextPageDate == nil)
+    selfView.displayReposList(data.repos)
   }
   
   // MARK: - ReposListViewDelegate

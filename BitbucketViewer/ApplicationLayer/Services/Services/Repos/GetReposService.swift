@@ -21,7 +21,7 @@ class GetReposService {
   
   // MARK: - Get repos
   
-  func getRepos(completion: @escaping Completion) {
+  func getRepos(nextPageDate: Date?, completion: @escaping Completion) {
     getReposWebAPIWorker.getRepos(completion: { webAPIResult in
       let result = ServiceResultConvertor().toServiceResult(webAPIResult)
       completion(result)
@@ -30,5 +30,6 @@ class GetReposService {
   
   // MARK: - Typealiases
   
-  typealias Completion = (ServiceResult<[Repo]>) -> Void
+  typealias Data = GetReposWebAPIData
+  typealias Completion = (ServiceResult<Data>) -> Void
 }

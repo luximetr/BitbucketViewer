@@ -73,6 +73,8 @@
 		DB220A1726876C36009F8236 /* ContainerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A1626876C36009F8236 /* ContainerTableCell.swift */; };
 		DB220A1926876C56009F8236 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A1826876C56009F8236 /* UITableView+Extension.swift */; };
 		DB220A1D26876E1C009F8236 /* SetImageFromURLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A1C26876E1C009F8236 /* SetImageFromURLService.swift */; };
+		DB220A202688268D009F8236 /* GetReposWebAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A1F2688268D009F8236 /* GetReposWebAPIData.swift */; };
+		DB220A22268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB220A21268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift */; };
 		DBA735412686F63100630516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA735402686F63100630516 /* Assets.xcassets */; };
 		DBA735442686F63100630516 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA735422686F63100630516 /* LaunchScreen.storyboard */; };
 		DBA735522686F73B00630516 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA735512686F73B00630516 /* main.swift */; };
@@ -153,6 +155,8 @@
 		DB220A1626876C36009F8236 /* ContainerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerTableCell.swift; sourceTree = "<group>"; };
 		DB220A1826876C56009F8236 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		DB220A1C26876E1C009F8236 /* SetImageFromURLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetImageFromURLService.swift; sourceTree = "<group>"; };
+		DB220A1F2688268D009F8236 /* GetReposWebAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposWebAPIData.swift; sourceTree = "<group>"; };
+		DB220A21268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReposWebAPIDataJSONParser.swift; sourceTree = "<group>"; };
 		DBA735342686F62F00630516 /* BitbucketViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitbucketViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA735402686F63100630516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DBA735432686F63100630516 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -210,7 +214,7 @@
 		DB22096D26870959009F8236 /* WebAPIWorkers */ = {
 			isa = PBXGroup;
 			children = (
-				DB220A0126875CD5009F8236 /* GetReposWebAPIWorker.swift */,
+				DB220A1E26882674009F8236 /* GetRepos */,
 			);
 			path = WebAPIWorkers;
 			sourceTree = "<group>";
@@ -411,7 +415,6 @@
 		DB2209C526870EB2009F8236 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				DB220A0A26875F00009F8236 /* Repos */,
 				DB2209DB268719EB009F8236 /* Start */,
 				DB2209D82687103A009F8236 /* Localization */,
 				DB2209D326870FD7009F8236 /* Languages */,
@@ -478,6 +481,7 @@
 			children = (
 				DB2209C526870EB2009F8236 /* Application */,
 				DB220A1A26876DFA009F8236 /* Files */,
+				DB220A0A26875F00009F8236 /* Repos */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -591,6 +595,16 @@
 				DB220A1C26876E1C009F8236 /* SetImageFromURLService.swift */,
 			);
 			path = SetImage;
+			sourceTree = "<group>";
+		};
+		DB220A1E26882674009F8236 /* GetRepos */ = {
+			isa = PBXGroup;
+			children = (
+				DB220A0126875CD5009F8236 /* GetReposWebAPIWorker.swift */,
+				DB220A1F2688268D009F8236 /* GetReposWebAPIData.swift */,
+				DB220A21268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift */,
+			);
+			path = GetRepos;
 			sourceTree = "<group>";
 		};
 		DBA7352B2686F62F00630516 = {
@@ -891,6 +905,7 @@
 				DB22097126870988009F8236 /* URLRequestComposer.swift in Sources */,
 				DB22098C26870A51009F8236 /* WebAPIResponseError.swift in Sources */,
 				DB2209AD26870D8D009F8236 /* StatusBarStyle.swift in Sources */,
+				DB220A22268826A8009F8236 /* GetReposWebAPIDataJSONParser.swift in Sources */,
 				DB220A0726875D41009F8236 /* ServiceResult.swift in Sources */,
 				DB220A0226875CD5009F8236 /* GetReposWebAPIWorker.swift in Sources */,
 				DB220A1D26876E1C009F8236 /* SetImageFromURLService.swift in Sources */,
@@ -932,6 +947,7 @@
 				DB2209FB268723A9009F8236 /* RepoUserJSONParser.swift in Sources */,
 				DB220A1526876C1A009F8236 /* ContainerTableCellConfigurator.swift in Sources */,
 				DB2209D026870F31009F8236 /* CurrentAppearanceChangedNotifier.swift in Sources */,
+				DB220A202688268D009F8236 /* GetReposWebAPIData.swift in Sources */,
 				DB22099426870A8D009F8236 /* WebAPIWorkersFactory.swift in Sources */,
 				DB220A1726876C36009F8236 /* ContainerTableCell.swift in Sources */,
 				DB2209F12687207F009F8236 /* TableViewController.swift in Sources */,

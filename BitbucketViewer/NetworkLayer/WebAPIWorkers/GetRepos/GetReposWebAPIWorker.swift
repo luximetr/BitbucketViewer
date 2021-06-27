@@ -11,7 +11,7 @@ class GetReposWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Dependencies
   
-  private let repoJSONParser = RepoJSONParser()
+  private let dataJSONParser = GetReposWebAPIDataJSONParser()
   
   // MARK: - Get repos
   
@@ -23,9 +23,8 @@ class GetReposWebAPIWorker: URLSessionWebAPIWorker {
         guard let strongSelf = self else { return }
         if let data = data,
            let json = try? JSONSerialization.jsonObject(with: data) as? JSON {
-          if let valueJSONs = json["values"] as? [JSON] {
-            let repos = valueJSONs.compactMap { strongSelf.repoJSONParser.parseRepo(from: $0 )}
-            completion(.success(repos))
+          if let webAPIData = strongSelf.dataJSONParser.parseGetReposWebAPIData(from: json) {
+            completion(.success(webAPIData))
           } else {
             let failure = strongSelf.parseFailure(error: error)
             completion(.failure(failure))
@@ -49,5 +48,5 @@ class GetReposWebAPIWorker: URLSessionWebAPIWorker {
   
   // MARK: - Typealiases
   
-  typealias Completion = (WebAPIResult<[Repo]>) -> Void
+  typealias Completion = (WebAPIResult<GetReposWebAPIData>) -> Void
 }
